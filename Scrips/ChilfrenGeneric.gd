@@ -18,10 +18,6 @@ func set_direction():
 		return Vector2.ZERO
 
 
-func follow_player(movement):
-	velocity = movement
-	move_and_slide()
-
 func setDifficulty(cant):
 	dificulty = cant
 

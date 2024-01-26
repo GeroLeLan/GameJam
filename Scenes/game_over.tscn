@@ -17,12 +17,25 @@ size_flags_vertical = 4
 
 [node name="QuitButton" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = 529.0
-offset_top = 364.0
-offset_right = 576.0
-offset_bottom = 395.0
+offset_left = 568.0
+offset_top = 356.0
+offset_right = 615.0
+offset_bottom = 387.0
 action_mode = 0
 text = "QUIT"
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.149
+anchor_top = 0.318
+anchor_right = 0.149
+anchor_bottom = 0.318
+offset_left = 310.799
+offset_top = 150.254
+offset_right = 366.799
+offset_bottom = 181.254
+text = "RETRY"
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 1
@@ -49,3 +62,4 @@ offset_bottom = 333.0
 text = "SCORE: "
 
 [connection signal="pressed" from="CanvasLayer/Panel/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]

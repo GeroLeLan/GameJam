@@ -14,7 +14,6 @@ const SPAWN_TIMER_MAX = 5.0
 @onready var lives = 3
 
 
-
 func _ready():
 	spawn_timer.start()
 	dificultTimer.start()

@@ -11,7 +11,7 @@ const MAX_SCORE = 100.0
 const SADNESS_DEPLETE_RATE = 5
 
 func set_collision(b):
-	collision_shape_2d.disabled = true
+	collision_shape_2d.set_deferred("disabled",true)
 
 func _ready():
 	game_ref = get_parent()

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var GlobalDificulty = 1
 
-func spawn_kid_outsideView(difficulty):
+func spawn_kid_outsideView():
 	var kid = preload("res://Scenes/pibito.tscn").instantiate()
 	kid.setDifficulty(GlobalDificulty)
 	var kid_spawn_location = $OutsideSpawnPath/SpawnLocation

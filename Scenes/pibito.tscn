@@ -18,7 +18,7 @@ animations = [{
 radius = 27.0
 height = 54.0
 
-[node name="Pibito" type="CharacterBody2D" groups=["children"]]
+[node name="PibitoGreen" type="CharacterBody2D" groups=["children"]]
 collision_layer = 2
 script = ExtResource("1_ap3hn")
 
