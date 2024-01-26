@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://svcat5twp0tj"]
+[gd_scene load_steps=7 format=3 uid="uid://svcat5twp0tj"]
 
 [ext_resource type="Script" path="res://Scrips/game.gd" id="1_pmwlm"]
 [ext_resource type="PackedScene" uid="uid://gg17sin70m6c" path="res://Scenes/kid_spawnner.tscn" id="2_ac2h1"]
 [ext_resource type="PackedScene" uid="uid://4hg7xf2kanx7" path="res://Scenes/Player.tscn" id="3_0vxsx"]
+[ext_resource type="PackedScene" uid="uid://ddu8fugi0j1pj" path="res://Scenes/fun_area.tscn" id="4_e2boj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ln4w"]
 size = Vector2(17, 653)
@@ -13,37 +14,43 @@ size = Vector2(1180, 20)
 [node name="Game" type="Node2D"]
 script = ExtResource("1_pmwlm")
 
-[node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 5.0
-
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 1153.0
 offset_bottom = 646.0
 color = Color(0.486275, 0.486275, 0.486275, 1)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="FunArea" parent="." instance=ExtResource("4_e2boj")]
+position = Vector2(1075, 325)
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_0vxsx")]
+z_index = 1
+position = Vector2(574, 319)
+
+[node name="UI_Layer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI_Layer"]
 offset_right = 410.0
 offset_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Layer/Panel"]
 layout_mode = 0
 offset_right = 411.0
 offset_bottom = 40.0
 theme_override_constants/separation = 20
 
-[node name="LivesLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="LivesLabel" type="Label" parent="UI_Layer/Panel/HBoxContainer"]
 layout_mode = 2
 text = "LIVES: "
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="UI_Layer/Panel/HBoxContainer"]
 layout_mode = 2
 text = "SCORE: "
 
-[node name="LevelUpLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="LevelUpLabel" type="Label" parent="UI_Layer/Panel/HBoxContainer"]
 layout_mode = 2
 text = "LEVEL UP"
+
+[node name="LevelUpTimer" type="Timer" parent="UI_Layer/Panel"]
 
 [node name="KidSpawnner" parent="." instance=ExtResource("2_ac2h1")]
 
@@ -67,11 +74,12 @@ shape = SubResource("RectangleShape2D_2yaej")
 position = Vector2(579, -12)
 shape = SubResource("RectangleShape2D_2yaej")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_0vxsx")]
-position = Vector2(574, 319)
-
 [node name="DifficultTimer" type="Timer" parent="."]
 wait_time = 5.0
 
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="UI_Layer/Panel/LevelUpTimer" to="." method="_on_level_up_timer_timeout"]
 [connection signal="timeout" from="DifficultTimer" to="." method="_on_difficult_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

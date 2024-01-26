@@ -2,8 +2,9 @@ extends Node2D
 
 const MAX_DIFICULTY = 3.1
 const DIFICULTY_INCRESER = 0.2
-@onready var lives_label = $CanvasLayer/Panel/HBoxContainer/LivesLabel
-@onready var score_label = $CanvasLayer/Panel/HBoxContainer/ScoreLabel
+
+@onready var lives_label = $UI_Layer/Panel/HBoxContainer/LivesLabel
+@onready var score_label = $UI_Layer/Panel/HBoxContainer/ScoreLabel
 
 @onready var spawn_timer = $SpawnTimer
 @onready var kid_spawnner = $KidSpawnner
@@ -16,7 +17,7 @@ const DIFICULTY_INCRESER = 0.2
 func _ready():
 	spawn_timer.start()
 	dificultTimer.start()
-	$CanvasLayer/Panel/HBoxContainer/LevelUpLabel.visible = false
+	$UI_Layer/Panel/HBoxContainer/LevelUpLabel.visible = false
 	lives_label.text = "LIVES: "+str(lives)
 	score_label.text = "SCORE: "+str(global.score)
 
@@ -48,3 +49,11 @@ func _on_difficult_timer_timeout():
 		GlobalDificulty+=DIFICULTY_INCRESER
 		kid_spawnner.setDificulty(GlobalDificulty)
 		get_tree().call_group("children","setDifficulty",GlobalDificulty)
+		$UI_Layer/Panel/HBoxContainer/LevelUpLabel.visible = true
+		$UI_Layer/Panel/LevelUpTimer.start()
+		
+
+
+func _on_level_up_timer_timeout():
+	$UI_Layer/Panel/HBoxContainer/LevelUpLabel.visible = false
+	pass # Replace with function body.

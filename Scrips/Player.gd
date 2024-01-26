@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 const MAX_VELOCITY = 300
 
+func get_chain():
+	return [10,20,30]
+
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO

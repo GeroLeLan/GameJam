@@ -12,7 +12,6 @@ const MAX_SCORE = 100.0
 const SADNESS_DEPLETE_RATE = 5
 
 
-
 func _ready():
 	game_ref = get_parent()
 	score = MAX_SCORE
