@@ -14,7 +14,7 @@ func _physics_process(delta):
 	direction.x= Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left") 
 	direction.y= Input.get_action_strength("Move_Down") - Input.get_action_strength("Move_Up") 
 	direction.normalized()
-	print(array)
+	#print(array)
 	if(direction):
 		velocity = direction * MAX_VELOCITY
 		for children in array:
@@ -39,7 +39,7 @@ func getposition():
 
 func addArray(value):
 	array.append(value)
-	print(array)
+	#print(array)
 
 func removeFromArray(children):
 	array.erase(children)
