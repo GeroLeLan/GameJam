@@ -34,8 +34,7 @@ func _physics_process(delta):
 	else:
 		score -= SADNESS_DEPLETE_RATE*delta*dificulty
 		progress_bar.value = score
-		print("Score",score)
-		print("Bar",progress_bar.value)
+		
 	
 	
 	var collision = move_and_collide(velocity*delta)
@@ -43,7 +42,7 @@ func _physics_process(delta):
 	if collision: 
 		var bounce_velocity = velocity.bounce(collision.get_normal())
 		velocity = bounce_velocity
-	print("dificulty:",dificulty)
+
 
 func setDifficulty(cant):
 	dificulty = cant

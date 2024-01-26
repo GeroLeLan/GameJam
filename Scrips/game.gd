@@ -2,6 +2,7 @@ extends Node2D
 
 const MAX_DIFICULTY = 3.1
 const DIFICULTY_INCRESER = 0.2
+const SPAWN_TIMER_MAX = 5.0
 
 @onready var lives_label = $UI_Layer/Panel/HBoxContainer/LivesLabel
 @onready var score_label = $UI_Layer/Panel/HBoxContainer/ScoreLabel
@@ -20,6 +21,7 @@ func _ready():
 	$UI_Layer/Panel/HBoxContainer/LevelUpLabel.visible = false
 	lives_label.text = "LIVES: "+str(lives)
 	score_label.text = "SCORE: "+str(global.score)
+	spawn_timer.wait_time = SPAWN_TIMER_MAX
 
 func add_score(s):
 	global.score += int(s)
@@ -51,6 +53,8 @@ func _on_difficult_timer_timeout():
 		get_tree().call_group("children","setDifficulty",GlobalDificulty)
 		$UI_Layer/Panel/HBoxContainer/LevelUpLabel.visible = true
 		$UI_Layer/Panel/LevelUpTimer.start()
+		spawn_timer.wait_time = SPAWN_TIMER_MAX - GlobalDificulty
+		print("Spawn Timer Max:"+str(spawn_timer.wait_time))
 		
 
 
