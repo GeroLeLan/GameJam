@@ -9,7 +9,6 @@ const DIFICULTY_INCRESER = 0.2
 @onready var kid_spawnner = $KidSpawnner
 @onready var dificultTimer = $DifficultTimer
 @onready var GlobalDificulty = 1
-@onready var score = 0
 @onready var lives = 3
 
 
@@ -19,11 +18,11 @@ func _ready():
 	dificultTimer.start()
 	$CanvasLayer/Panel/HBoxContainer/LevelUpLabel.visible = false
 	lives_label.text = "LIVES: "+str(lives)
-	score_label.text = "SCORE: "+str(score)
+	score_label.text = "SCORE: "+str(global.score)
 
 func add_score(s):
-	score += int(s)
-	score_label.text = "SCORE: "+str(score)
+	global.score += int(s)
+	score_label.text = "SCORE: "+str(global.score)
 
 func lose_life():
 	lives -= 1
@@ -31,12 +30,7 @@ func lose_life():
 	
 	if lives <= 0:
 		# Pausar todos los timers
-		get_tree().paused = true
-		
-		var game_over_scr = preload("res://Scenes/game_over.tscn").instantiate()
-		game_over_scr.final_score = score
-		game_over_scr.position = global_position
-		add_child(game_over_scr)
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 
 

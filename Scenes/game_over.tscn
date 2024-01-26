@@ -16,6 +16,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="QuitButton" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
 offset_left = 529.0
 offset_top = 364.0
 offset_right = 576.0
@@ -40,6 +41,7 @@ size_flags_horizontal = 4
 text = "GAME OVER"
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
 offset_left = 516.0
 offset_top = 310.0
 offset_right = 576.0

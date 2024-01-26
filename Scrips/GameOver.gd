@@ -3,7 +3,7 @@ extends Node2D
 @export var final_score = 0
 
 func _ready():
-	$CanvasLayer/Panel/ScoreLabel.text = "SCORE: "+str(final_score)
+	$CanvasLayer/Panel/ScoreLabel.text = "SCORE: "+str(global.score)
 
 
 
