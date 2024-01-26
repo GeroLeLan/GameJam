@@ -20,9 +20,12 @@ func _physics_process(delta):
 	if score <= 0.0:
 		lose_kid()
 	else:
-		score -= SADNESS_DEPLETE_RATE*delta*dificulty
-		progress_bar.value = score
-		
+			if acompañanado:
+				score -= 0.7*SADNESS_DEPLETE_RATE*delta*dificulty
+				progress_bar.value = score
+			else:
+				score -= SADNESS_DEPLETE_RATE*delta*dificulty
+				progress_bar.value = score
 	
 	if(!acompañanado):
 		var collision = move_and_collide(velocity*delta)
@@ -30,8 +33,9 @@ func _physics_process(delta):
 		if collision: 
 			var bounce_velocity = velocity.bounce(collision.get_normal())
 			velocity = bounce_velocity
-	#else:
-		#follow_player()
+	else:
+		velocity = set_direction()*300
+		move_and_slide()
 
 
 

@@ -16,11 +16,9 @@ func _physics_process(delta):
 	direction.normalized()
 	
 	
-	#print(array)
+
 	if(direction):
 		velocity = direction * MAX_VELOCITY
-		for children in array:
-			children.follow_player(velocity)
 	else:
 		velocity = direction
 		
@@ -30,7 +28,14 @@ func _physics_process(delta):
 func _on_child_colector_body_entered(body):
 	if body.is_in_group("children"):
 		if(!body.acompañanado):
-			body.capture_kid()
+			var target
+			# Si esta solo, el target es player, sino el del final
+			if array.is_empty():
+				target = self
+			else:
+				target = array.back()
+			body.capture_kid(target)
+			array.append(body)
 		
 func getposition():
 	var relative_pos = position
