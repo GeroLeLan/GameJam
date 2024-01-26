@@ -1,12 +1,10 @@
-extends CharacterBody2D
+extends "res://Scrips/ChilfrenGeneric.gd"
 signal kid_removed
 
 @export var speed = 100
 @onready var progress_bar = $ProgressBar
 @onready var score
-@onready var game_ref
 
-var dificulty =1
 
 const MAX_SCORE = 100.0
 const SADNESS_DEPLETE_RATE = 5
@@ -18,17 +16,7 @@ func _ready():
 	if velocity == Vector2.ZERO:
 		velocity = Vector2.RIGHT.rotated(randf_range(0,TAU)) * speed * dificulty
 
-
-func capture_kid():
-	game_ref.add_score(score)
-	queue_free()
-
-func lose_kid():
-	game_ref.lose_life()
-	queue_free()
-
 func _physics_process(delta):
-	
 	if score <= 0.0:
 		lose_kid()
 	else:
@@ -36,14 +24,15 @@ func _physics_process(delta):
 		progress_bar.value = score
 		
 	
-	
-	var collision = move_and_collide(velocity*delta)
-	
-	if collision: 
-		var bounce_velocity = velocity.bounce(collision.get_normal())
-		velocity = bounce_velocity
+	if(!acompañanado):
+		var collision = move_and_collide(velocity*delta)
+		
+		if collision: 
+			var bounce_velocity = velocity.bounce(collision.get_normal())
+			velocity = bounce_velocity
+		print("dificulty:",dificulty)
+	#else:
+		#follow_player()
 
 
-func setDifficulty(cant):
-	dificulty = cant
 
