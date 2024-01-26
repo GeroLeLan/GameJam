@@ -46,4 +46,8 @@ shape = SubResource("RectangleShape2D_2yaej")
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_0vxsx")]
 position = Vector2(574, 319)
 
+[node name="DifficultTimer" type="Timer" parent="."]
+wait_time = 5.0
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="DifficultTimer" to="." method="_on_difficult_timer_timeout"]
