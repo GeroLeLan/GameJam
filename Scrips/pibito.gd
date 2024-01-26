@@ -30,7 +30,6 @@ func _physics_process(delta):
 		if collision: 
 			var bounce_velocity = velocity.bounce(collision.get_normal())
 			velocity = bounce_velocity
-		print("dificulty:",dificulty)
 	#else:
 		#follow_player()
 

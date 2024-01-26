@@ -22,6 +22,8 @@ func _ready():
 	lives_label.text = "LIVES: "+str(lives)
 	score_label.text = "SCORE: "+str(global.score)
 	spawn_timer.wait_time = SPAWN_TIMER_MAX
+	for i in range(3):
+		kid_spawnner.spawn_kid_insideView()
 
 func add_score(s):
 	global.score += int(s)
@@ -54,7 +56,6 @@ func _on_difficult_timer_timeout():
 		$UI_Layer/Panel/HBoxContainer/LevelUpLabel.visible = true
 		$UI_Layer/Panel/LevelUpTimer.start()
 		spawn_timer.wait_time = SPAWN_TIMER_MAX - GlobalDificulty
-		print("Spawn Timer Max:"+str(spawn_timer.wait_time))
 		
 
 

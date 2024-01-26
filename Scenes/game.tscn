@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scrips/game.gd" id="1_pmwlm"]
 [ext_resource type="PackedScene" uid="uid://gg17sin70m6c" path="res://Scenes/kid_spawnner.tscn" id="2_ac2h1"]
 [ext_resource type="PackedScene" uid="uid://4hg7xf2kanx7" path="res://Scenes/Player.tscn" id="3_0vxsx"]
-[ext_resource type="PackedScene" path="res://Scenes/fun_area.tscn" id="4_e2boj"]
+[ext_resource type="PackedScene" uid="uid://ddu8fugi0j1pj" path="res://Scenes/fun_area.tscn" id="4_e2boj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ln4w"]
 size = Vector2(17, 653)

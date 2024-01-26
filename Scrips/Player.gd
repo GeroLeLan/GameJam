@@ -3,7 +3,7 @@ extends CharacterBody2D
 const MAX_VELOCITY = 300
 
 func get_chain():
-	return [10,20,30]
+	return array
 
 var array = []
 var offsetX = -30
@@ -14,6 +14,8 @@ func _physics_process(delta):
 	direction.x= Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left") 
 	direction.y= Input.get_action_strength("Move_Down") - Input.get_action_strength("Move_Up") 
 	direction.normalized()
+	
+	
 	#print(array)
 	if(direction):
 		velocity = direction * MAX_VELOCITY
@@ -21,6 +23,7 @@ func _physics_process(delta):
 			children.follow_player(velocity)
 	else:
 		velocity = direction
+		
 	move_and_slide() 
 
 

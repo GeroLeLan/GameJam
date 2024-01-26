@@ -3,14 +3,19 @@ extends Node2D
 @export var tipoArea = "red"
 const CHAIN_MULTIPLIER = 1.5
 @onready var game_ref = get_parent()
-func calculate_score(chain):
-	# chain es un array de ints [97, 76, 21]
-	
+
+
+func calculate_score(player,chain):
+	# chain es un array de pibitos
 	var sum = 0
-	for element in chain:
-		sum+= element
-		
-	var result = int(sum*CHAIN_MULTIPLIER)
+	var chain_size = chain.size()
+	for i in range(chain.size()):
+		var kid = chain.pop_front()
+		sum += kid.score
+		player.removeFromArray(kid)
+		kid.queue_free()		
+	
+	var result = int(sum*CHAIN_MULTIPLIER*max(chain_size,5))	# 5 porque si
 	return  result
 
 
@@ -18,8 +23,8 @@ func calculate_score(chain):
 func _on_area_2d_body_entered(body):
 	var chain_array
 	if body.has_method("get_chain"):
-		chain_array = body.get_chain()		# Parametrizar el tipo si hacemos opcion2
-		var score = calculate_score(chain_array)
+		chain_array = body.get_chain()		
+		var score = calculate_score(body,chain_array)
 		game_ref.add_score(score)
 	
 	pass # Replace with function body.
