@@ -21,6 +21,30 @@ offset_right = 1153.0
 offset_bottom = 646.0
 color = Color(0.486275, 0.486275, 0.486275, 1)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 410.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 411.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+
+[node name="LivesLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer"]
+layout_mode = 2
+text = "LIVES: "
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer"]
+layout_mode = 2
+text = "SCORE: "
+
+[node name="LevelUpLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer"]
+layout_mode = 2
+text = "LEVEL UP"
+
 [node name="KidSpawnner" parent="." instance=ExtResource("2_ac2h1")]
 
 [node name="Bordes" type="Node2D" parent="."]

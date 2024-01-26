@@ -18,5 +18,5 @@ func _physics_process(delta):
 
 func _on_child_colector_body_entered(body):
 	if body.is_in_group("children"):
-		body.remove_kid()
+		body.capture_kid()
 		
