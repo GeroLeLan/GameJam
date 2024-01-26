@@ -35,6 +35,9 @@ func _on_child_colector_body_entered(body):
 			else:
 				target = array.back()
 			body.capture_kid(target)
+			body.player_ref = self
+			#body.collision_shape_2d.disabled = true
+			body.set_collision(false)
 			array.append(body)
 		
 func getposition():
@@ -50,4 +53,10 @@ func addArray(value):
 	#print(array)
 
 func removeFromArray(children):
-	array.erase(children)
+	if array.size() > 0:
+		if array.front() == children and array.size() > 1:
+			array[1].target = self
+		elif array.back() != children:
+			var index = array.find(children)
+			array[index+1].target = array[index-1]
+		array.erase(children)

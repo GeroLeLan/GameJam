@@ -57,6 +57,7 @@ text = "LEVEL UP"
 [node name="Bordes" type="Node2D" parent="."]
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Bordes"]
+collision_mask = 0
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Bordes/StaticBody2D3"]
 position = Vector2(1163, 324)

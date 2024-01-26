@@ -4,7 +4,7 @@ var dificulty = 1
 var acompañanado =false
 @onready var target 
 @onready var game_ref
-
+@onready var player_ref
 # Experimento
 var player_position
 var target_position
@@ -31,11 +31,12 @@ func get_direction():
 func capture_kid(t):
 	acompañanado = true
 	target = t
+	
 	#global_position = get_direction()		VER ESTO CON JUAN
 	#target.addArray(self)
 
 func lose_kid():
 	game_ref.lose_life()
 	if acompañanado:
-		target.removeFromArray(self)
+		player_ref.removeFromArray(self)
 	queue_free()

@@ -9,14 +9,17 @@ func calculate_score(player,chain):
 	# chain es un array de pibitos
 	var sum = 0
 	var chain_size = chain.size()
+	print("inicio suma")
 	for i in range(chain.size()):
 		var kid = chain.pop_front()
 		sum += kid.score
-		player.removeFromArray(kid)
+		print(kid.score)
+		player.array.erase(kid)
 		kid.queue_free()		
-	
-	var result = int(sum*CHAIN_MULTIPLIER*max(chain_size,5))	# 5 porque si
-	return  result
+	print(sum)
+	var result = int(int(sum)**min(chain_size,5))	# 5 porque si
+	print(result)
+	return result
 
 
 

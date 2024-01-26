@@ -4,11 +4,14 @@ signal kid_removed
 @export var speed = 100
 @onready var progress_bar = $ProgressBar
 @onready var score
+@onready var collision_shape_2d = $CollisionShape2D
 
 
 const MAX_SCORE = 100.0
 const SADNESS_DEPLETE_RATE = 5
 
+func set_collision(b):
+	collision_shape_2d.disabled = true
 
 func _ready():
 	game_ref = get_parent()
@@ -34,7 +37,7 @@ func _physics_process(delta):
 			var bounce_velocity = velocity.bounce(collision.get_normal())
 			velocity = bounce_velocity
 	else:
-		velocity = set_direction()*300
+		velocity = set_direction()*280
 		move_and_slide()
 
 
