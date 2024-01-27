@@ -58,6 +58,9 @@ text = "LEVEL UP"
 
 [node name="LevelUpTimer" type="Timer" parent="UI_Layer/Panel"]
 
+[node name="TiempoLimite" type="Timer" parent="UI_Layer/Panel"]
+wait_time = 90.0
+
 [node name="KidSpawnner" parent="." instance=ExtResource("2_ac2h1")]
 
 [node name="Bordes" type="Node2D" parent="."]
@@ -91,5 +94,6 @@ wait_time = 5.0
 position = Vector2(22, 103)
 
 [connection signal="timeout" from="UI_Layer/Panel/LevelUpTimer" to="." method="_on_level_up_timer_timeout"]
+[connection signal="timeout" from="UI_Layer/Panel/TiempoLimite" to="." method="_on_tiempo_limite_timeout"]
 [connection signal="timeout" from="DifficultTimer" to="." method="_on_difficult_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
