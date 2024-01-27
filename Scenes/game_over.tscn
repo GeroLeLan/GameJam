@@ -17,10 +17,10 @@ size_flags_vertical = 4
 
 [node name="QuitButton" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = 606.0
-offset_top = 412.0
-offset_right = 653.0
-offset_bottom = 443.0
+offset_left = 180.0
+offset_top = 560.0
+offset_right = 299.0
+offset_bottom = 611.0
 action_mode = 0
 text = "QUIT"
 
@@ -31,10 +31,10 @@ anchor_left = 0.149
 anchor_top = 0.318
 anchor_right = 0.149
 anchor_bottom = 0.318
-offset_left = 261.799
-offset_top = 206.254
-offset_right = 317.799
-offset_bottom = 237.254
+offset_left = -125.201
+offset_top = 354.254
+offset_right = -6.201
+offset_bottom = 405.254
 text = "RETRY"
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
@@ -44,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -71.5
-offset_top = -59.5
-offset_right = 20.5
-offset_bottom = -36.5
+offset_left = -526.5
+offset_top = -300.5
+offset_right = -434.5
+offset_bottom = -277.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -71,17 +71,34 @@ text = "NOMBRE:"
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = 516.0
-offset_top = 310.0
-offset_right = 576.0
-offset_bottom = 333.0
+offset_left = 47.0
+offset_top = 68.0
+offset_right = 107.0
+offset_bottom = 91.0
 text = "SCORE: "
 
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer/Panel"]
-offset_left = 589.0
-offset_top = 347.0
-offset_right = 724.0
-offset_bottom = 380.0
+layout_mode = 0
+offset_left = 140.0
+offset_top = 111.0
+offset_right = 275.0
+offset_bottom = 144.0
+
+[node name="Submit" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 110.0
+offset_right = 349.0
+offset_bottom = 141.0
+text = "Submit"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 59.0
+offset_right = 1108.0
+offset_bottom = 588.0
 
 [connection signal="pressed" from="CanvasLayer/Panel/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/Submit" to="." method="_on_submit_pressed"]
