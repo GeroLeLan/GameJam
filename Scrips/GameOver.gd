@@ -9,13 +9,15 @@ func _ready():
 
 
 func _on_quit_button_pressed():
-	leaderboard_manager.update_leaderboard(global.score,"BOB")
+	var nombre = $CanvasLayer/Panel/LineEdit.text
+	leaderboard_manager.update_leaderboard(global.score,nombre)
 	get_tree().quit()
 
 
 
 func _on_button_pressed():
-	leaderboard_manager.update_leaderboard(global.score,"BOB")
+	var nombre = $CanvasLayer/Panel/LineEdit.text
+	leaderboard_manager.update_leaderboard(global.score,nombre)
 	global.score = 0
 	get_tree().change_scene_to_file("res://Scenes/game.tscn")
 	pass # Replace with function body.

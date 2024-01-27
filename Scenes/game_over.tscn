@@ -17,10 +17,10 @@ size_flags_vertical = 4
 
 [node name="QuitButton" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = 568.0
-offset_top = 356.0
-offset_right = 615.0
-offset_bottom = 387.0
+offset_left = 606.0
+offset_top = 412.0
+offset_right = 653.0
+offset_bottom = 443.0
 action_mode = 0
 text = "QUIT"
 
@@ -31,10 +31,10 @@ anchor_left = 0.149
 anchor_top = 0.318
 anchor_right = 0.149
 anchor_bottom = 0.318
-offset_left = 310.799
-offset_top = 150.254
-offset_right = 366.799
-offset_bottom = 181.254
+offset_left = 261.799
+offset_top = 206.254
+offset_right = 317.799
+offset_bottom = 237.254
 text = "RETRY"
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
@@ -53,6 +53,22 @@ grow_vertical = 2
 size_flags_horizontal = 4
 text = "GAME OVER"
 
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = 77.5
+offset_right = 45.0
+offset_bottom = 100.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "NOMBRE:"
+
 [node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0
 offset_left = 516.0
@@ -60,6 +76,12 @@ offset_top = 310.0
 offset_right = 576.0
 offset_bottom = 333.0
 text = "SCORE: "
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/Panel"]
+offset_left = 589.0
+offset_top = 347.0
+offset_right = 724.0
+offset_bottom = 380.0
 
 [connection signal="pressed" from="CanvasLayer/Panel/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]
