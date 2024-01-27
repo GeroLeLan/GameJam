@@ -15,6 +15,10 @@ const SPAWN_TIMER_MAX = 5.0
 
 @onready var fun_area = $FunArea
 @onready var fun_area_2 = $FunArea2
+@onready var kids_counter = 0 
+const KIDS_LEVELUP_CAP = 5
+
+var dificultad_time = false
 
 
 func _ready():
@@ -28,9 +32,17 @@ func _ready():
 		kid_spawnner.spawn_kid_insideView()
 	$Payaso.set_arrow_target($FunArea.position,$FunArea2.position)
 
+
+
+
 func add_score(s):
 	global.score += int(s)
 	score_label.text = "SCORE: "+str(global.score)
+	if dificultad_time == false:
+		if kids_counter >= KIDS_LEVELUP_CAP:
+			kids_counter = kids_counter % KIDS_LEVELUP_CAP
+			update_difficulty()
+	
 
 func lose_life():
 	lives -= 1
@@ -50,8 +62,7 @@ func _on_spawn_timer_timeout():
 	spawn_timer.start()
 	pass # Replace with function body.
 
-
-func _on_difficult_timer_timeout():
+func update_difficulty():
 	if(GlobalDificulty+DIFICULTY_INCRESER)<= MAX_DIFICULTY:
 		GlobalDificulty+=DIFICULTY_INCRESER
 		kid_spawnner.setDificulty(GlobalDificulty)
@@ -59,8 +70,11 @@ func _on_difficult_timer_timeout():
 		$UI_Layer/Panel/HBoxContainer/LevelUpLabel.visible = true
 		$UI_Layer/Panel/LevelUpTimer.start()
 		spawn_timer.wait_time = SPAWN_TIMER_MAX - GlobalDificulty
-		
 
+func _on_difficult_timer_timeout():
+	if dificultad_time:
+		update_difficulty()
+	pass
 
 func _on_level_up_timer_timeout():
 	$UI_Layer/Panel/HBoxContainer/LevelUpLabel.visible = false

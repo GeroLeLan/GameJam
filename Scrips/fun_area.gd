@@ -66,6 +66,8 @@ func count_check(target_chain,current_chain):
 
 func calculate_score(player,chain):
 	var size = chain.size()
+	game_ref.kids_counter+= chain.size()
+	
 	var int_chain = []
 	# Recorro array de pibitos y anoto la chain de ints
 	for i in range(chain.size()):
