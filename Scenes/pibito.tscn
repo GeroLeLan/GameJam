@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://cbmn61xxu1sq5"]
 
-[ext_resource type="Script" path="res://Scrips/pibito.gd" id="1_ap3hn"]
-[ext_resource type="Texture2D" uid="uid://i4k4wgpe5jq4" path="res://Sprites/slime_body.png" id="2_3twjd"]
-[ext_resource type="Texture2D" uid="uid://bo6xn1smhmbce" path="res://Sprites/slime_body_hurt.png" id="3_6s1q5"]
-[ext_resource type="Texture2D" uid="uid://cs65nubt4imkw" path="res://Sprites/square_ref.png" id="4_yiljo"]
+[ext_resource type="Script" path="res://Scrips/pibito.gd" id="1_lueui"]
+[ext_resource type="Texture2D" uid="uid://j6vivrdd6cjw" path="res://Sprites/pibita .png" id="2_1lhtc"]
+[ext_resource type="Texture2D" uid="uid://d11alfoht4hke" path="res://Sprites/pibito 1.png" id="3_unjk8"]
+[ext_resource type="Texture2D" uid="uid://dduhy0w084pao" path="res://Sprites/pibito 2.png" id="4_fp5he"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8axhb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_3twjd")
+"texture": ExtResource("2_1lhtc")
 }],
 "loop": true,
 "name": &"idle",
@@ -17,7 +17,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_6s1q5")
+"texture": ExtResource("3_unjk8")
 }],
 "loop": true,
 "name": &"idle naranja",
@@ -25,7 +25,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_yiljo")
+"texture": ExtResource("4_fp5he")
 }],
 "loop": true,
 "name": &"idle square",
@@ -33,26 +33,27 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_68d6v"]
-radius = 27.0
-height = 54.0
+radius = 13.0
+height = 26.0
 
 [node name="PibitoGreen" type="CharacterBody2D" groups=["children"]]
 collision_layer = 2
-script = ExtResource("1_ap3hn")
+script = ExtResource("1_lueui")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-3.8147e-06, -4)
-scale = Vector2(0.476563, 0.492188)
+position = Vector2(2, -9)
+scale = Vector2(1.5, 1.546)
 sprite_frames = SubResource("SpriteFrames_8axhb")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 1)
 shape = SubResource("CapsuleShape2D_68d6v")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = -35.0
+offset_left = -26.0
 offset_top = 23.0
-offset_right = 36.0
+offset_right = 26.0
 offset_bottom = 36.0
 value = 100.0
 show_percentage = false
