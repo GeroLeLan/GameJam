@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bquv7akdqyvt5"]
+[gd_scene load_steps=10 format=3 uid="uid://bquv7akdqyvt5"]
 
 [ext_resource type="Script" path="res://Scrips/Menu.gd" id="1_ye3qd"]
+[ext_resource type="AudioStream" uid="uid://cdgbimst4l5jj" path="res://assets/musicaMenu/baseMenu.ogg" id="2_r10ty"]
+[ext_resource type="AudioStream" uid="uid://dra4x1xl72ycy" path="res://assets/musicaMenu/melodiado1.ogg" id="4_l46wt"]
+[ext_resource type="Script" path="res://audio/acordes.gd" id="4_q520x"]
+[ext_resource type="AudioStream" uid="uid://bk53p3cd53cf5" path="res://assets/musicaMenu/melodiado2.ogg" id="5_alrvw"]
+[ext_resource type="Script" path="res://audio/melodiasDo.gd" id="6_5gske"]
+[ext_resource type="AudioStream" uid="uid://c224vpq53mlcq" path="res://assets/musicaMenu/melodiafa1.ogg" id="7_v5hod"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kshia"]
+playback_mode = 1
+streams_count = 1
+stream_0/stream = ExtResource("2_r10ty")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_52cqy"]
+streams_count = 2
+stream_0/stream = ExtResource("4_l46wt")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_alrvw")
+stream_1/weight = 1.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ye3qd")
@@ -15,4 +34,19 @@ text = "START"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(472, 206)
 
+[node name="acordes" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_kshia")
+autoplay = true
+script = ExtResource("4_q520x")
+
+[node name="melodiasDo" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_52cqy")
+autoplay = true
+script = ExtResource("6_5gske")
+
+[node name="melodiasFa" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_v5hod")
+
 [connection signal="pressed" from="Button_Start" to="." method="_on_button_start_pressed"]
+[connection signal="finished" from="acordes" to="acordes" method="_on_finished"]
+[connection signal="finished" from="melodiasDo" to="melodiasDo" method="_on_finished"]
