@@ -101,3 +101,4 @@ func _on_area_2d_body_entered(body):
 		var score = calculate_score(body,chain_array)
 		game_ref.add_score(score)
 		initialize_chain()
+		game_ref.modifyTime((chain_size-1)*10)
