@@ -4,6 +4,7 @@ signal kid_removed
 @export var speed = 100
 @onready var progress_bar = $ProgressBar
 @onready var score
+@onready var color
 @onready var collision_shape_2d = $CollisionShape2D
 
 
@@ -15,11 +16,14 @@ func set_collision(b):
 
 func _ready():
 	game_ref = get_parent()
+	color = randi() % 3
 	score = MAX_SCORE
+	
 	if velocity == Vector2.ZERO:
 		velocity = Vector2.RIGHT.rotated(randf_range(0,TAU)) * speed * dificulty
 
 func _physics_process(delta):
+	setColor()
 	if score <= 0.0:
 		lose_kid()
 	else:
@@ -40,5 +44,11 @@ func _physics_process(delta):
 		velocity = set_direction()*280
 		move_and_slide()
 
-
+func setColor():
+	if color==0:
+		$AnimatedSprite2D.play("idle")
+	if color ==1: 
+		$AnimatedSprite2D.play("idle naranja")
+	if color ==2:
+		$AnimatedSprite2D.play("idle square")
 

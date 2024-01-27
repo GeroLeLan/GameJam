@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbmn61xxu1sq5"]
+[gd_scene load_steps=7 format=3 uid="uid://cbmn61xxu1sq5"]
 
 [ext_resource type="Script" path="res://Scrips/pibito.gd" id="1_ap3hn"]
 [ext_resource type="Texture2D" uid="uid://i4k4wgpe5jq4" path="res://Sprites/slime_body.png" id="2_3twjd"]
+[ext_resource type="Texture2D" uid="uid://bo6xn1smhmbce" path="res://Sprites/slime_body_hurt.png" id="3_6s1q5"]
+[ext_resource type="Texture2D" uid="uid://cs65nubt4imkw" path="res://Sprites/square_ref.png" id="4_yiljo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8axhb"]
 animations = [{
@@ -11,6 +13,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6s1q5")
+}],
+"loop": true,
+"name": &"idle naranja",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_yiljo")
+}],
+"loop": true,
+"name": &"idle square",
 "speed": 5.0
 }]
 
@@ -26,7 +44,7 @@ script = ExtResource("1_ap3hn")
 position = Vector2(-3.8147e-06, -4)
 scale = Vector2(0.476563, 0.492188)
 sprite_frames = SubResource("SpriteFrames_8axhb")
-animation = &"idle"
+animation = &"idle square"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_68d6v")
