@@ -8,7 +8,7 @@ func get_chain():
 var array = []
 var offsetX = -30
 var offsetY = -30
-
+var lastMovement = Vector2.ZERO
 var xSize
 
 func _ready():
@@ -32,10 +32,17 @@ func _physics_process(delta):
 	else:
 		velocity = direction
 	
-	if(velocity != Vector2.ZERO):
-		$AnimatedSprite2D.play("movement")
+	if(velocity != Vector2.ZERO or lastMovement!= Vector2.ZERO):
+		if($AnimatedSprite2D.animation!="Star_movement") and ($AnimatedSprite2D.animation!="movement"):
+			$AnimatedSprite2D.play("Star_movement")
+		if($AnimatedSprite2D.animation=="Star_movement") and ($AnimatedSprite2D.animation!="movement" and $AnimatedSprite2D.frame_progress == 1.0):
+			$AnimatedSprite2D.play("movement")
 	else:
-		$AnimatedSprite2D.play("default")
+		if($AnimatedSprite2D.animation!="End_movement") and ($AnimatedSprite2D.animation!="default"):
+			$AnimatedSprite2D.play("End_movement")
+		if($AnimatedSprite2D.animation=="End_movement") and ($AnimatedSprite2D.animation!="default" and $AnimatedSprite2D.frame_progress == 1.0):
+			$AnimatedSprite2D.play("default")
+	lastMovement = velocity
 	move_and_slide() 
 
 
