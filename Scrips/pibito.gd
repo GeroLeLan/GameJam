@@ -3,12 +3,12 @@ signal kid_removed
 
 @export var speed = 100
 @onready var progress_bar = $ProgressBar
-@onready var score
 @onready var color
+@onready var sadness
 @onready var collision_shape_2d = $CollisionShape2D
 
 
-const MAX_SCORE = 100.0
+const SADNESS_METER_MAX = 100.0
 const SADNESS_DEPLETE_RATE = 5
 
 func set_collision(b):
@@ -17,22 +17,22 @@ func set_collision(b):
 func _ready():
 	game_ref = get_parent()
 	color = randi() % 3
-	score = MAX_SCORE
+	sadness = SADNESS_METER_MAX
 	
 	if velocity == Vector2.ZERO:
 		velocity = Vector2.RIGHT.rotated(randf_range(0,TAU)) * speed * dificulty
 
 func _physics_process(delta):
 	setColor()
-	if score <= 0.0:
+	if sadness <= 0.0:
 		lose_kid()
 	else:
 			if acompañanado:
-				score -= 0.7*SADNESS_DEPLETE_RATE*delta*dificulty
-				progress_bar.value = score
+				sadness -= 0.7*SADNESS_DEPLETE_RATE*delta*dificulty
+				progress_bar.value = sadness
 			else:
-				score -= SADNESS_DEPLETE_RATE*delta*dificulty
-				progress_bar.value = score
+				sadness -= SADNESS_DEPLETE_RATE*delta*dificulty
+				progress_bar.value = sadness
 	
 	if(!acompañanado):
 		var collision = move_and_collide(velocity*delta)
@@ -47,8 +47,8 @@ func _physics_process(delta):
 func setColor():
 	if color == 0:
 		$AnimatedSprite2D.play("idle")
-	if color ==1: 
+	if color == 1: 
 		$AnimatedSprite2D.play("idle naranja")
-	if color ==2:
+	if color == 2:
 		$AnimatedSprite2D.play("idle square")
 

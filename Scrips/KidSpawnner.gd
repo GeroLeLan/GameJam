@@ -16,11 +16,9 @@ func spawn_kid_insideView():
 	var kid = preload("res://Scenes/pibito.tscn").instantiate()
 	
 	var viewport_size = get_viewport_rect().size
-
-# Generate random coordinates within the viewport
+	# Generate random coordinates within the viewport
 	var random_x = randi() % int(viewport_size.x)
 	var random_y = randi() % int(viewport_size.y)
-
 	
 	kid.position = Vector2(random_x, random_y)
 	kid.setDifficulty(GlobalDificulty)

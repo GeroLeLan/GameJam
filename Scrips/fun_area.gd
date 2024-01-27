@@ -1,8 +1,11 @@
 extends Node2D
 
-@export var chain_size = 3
-var chain
-const CHAIN_MULTIPLIER = 1.5
+@export var chain_size = 2
+@export var base_score = 10
+@export var chain_score = 100			# Definir luego por cada zona
+
+var target_chain
+
 @onready var game_ref = get_parent()
 @onready var h_box_container = $Panel/HBoxContainer
 
@@ -12,11 +15,15 @@ func _ready():
 
 
 func initialize_chain():
+	# Limpio todos los hijos del container
+	for node in h_box_container.get_children():
+		node.queue_free()
+	
 	# Genero una cadena al azar
-	chain = []
+	target_chain = []
 	for i in range(chain_size):
 		var element = randi() % 3
-		chain.append(element)
+		target_chain.append(element)
 		var textRect = TextureRect.new()
 
 		if element == 0:
@@ -29,12 +36,39 @@ func initialize_chain():
 		textRect.expand_mode = 2
 		h_box_container.add_child(textRect)
 	
-	print(chain)
 	
-	# Setup panel
+
+
+func count_check(target_chain,current_chain):
+	var count = 0
+	if current_chain.size() == 0:
+		return count
+	for i in range(target_chain.size() - current_chain.size() + 1):
+		var m = true
+		for j in range(current_chain.size()):
+			if target_chain[i + j] != current_chain[j]:
+				m = false
+				break
+		if m:
+			count += 1
+
+	return count
 
 
 func calculate_score(player,chain):
+	var size = chain.size()
+	var int_chain = []
+	# Recorro array de pibitos y anoto la chain de ints
+	for i in range(chain.size()):
+		var kid = chain.pop_front()
+		int_chain.append(kid.color)
+		player.array.erase(kid)
+		kid.queue_free()
+	
+	# Calculo la cantidad de veces que se verifica la cadena.
+	print(count_check(target_chain,int_chain))
+	
+	
 	# chain es un array de pibitos
 	var sum = 0
 	var chain_size = chain.size()
@@ -54,5 +88,6 @@ func _on_area_2d_body_entered(body):
 		chain_array = body.get_chain()		
 		var score = calculate_score(body,chain_array)
 		game_ref.add_score(score)
+		initialize_chain()
 	
 	pass # Replace with function body.
