@@ -1,27 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0rdbo4bbd8qj"]
+[gd_scene load_steps=2 format=3 uid="uid://c0rdbo4bbd8qj"]
 
 [ext_resource type="Script" path="res://Scrips/credits.gd" id="1_mbfq8"]
-
-[sub_resource type="FontFile" id="FontFile_xvygy"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/50/0/ascent = 0.0
-cache/0/50/0/descent = 0.0
-cache/0/50/0/underline_position = 0.0
-cache/0/50/0/underline_thickness = 0.0
-cache/0/50/0/scale = 1.0
-cache/0/50/0/glyphs/0/advance = Vector2(0, 0)
-cache/0/50/0/glyphs/0/offset = Vector2(0, 0)
-cache/0/50/0/glyphs/0/size = Vector2(0, 0)
-cache/0/50/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
-cache/0/50/0/glyphs/0/texture_idx = -1
-cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -49,20 +28,39 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -0.5
-offset_right = 0.5
+offset_left = -400.0
+offset_top = -312.0
+offset_right = 400.0
+offset_bottom = 304.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = SubResource("FontFile_xvygy")
-theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "[center] Credits
+text = "[center]
+        
+       [b][font size=40]Créditos[/font][/b]
 
-hola
-[/center]"
+        [b]Desarrollado por:[/b]
+        - Diego
+		- Gerónimo Le Lan Toussaint
+		- Juan
+        
+        [b]Gráficos:[/b]
+        - Beño
+        - Iago/yuyo
+
+        [b]Música:[/b]
+        - Pablo
+        - Nombre del Compositor 2
+
+        [b]Agradecimientos Especiales:[/b]
+        - Flor
+
+        [b][font size=30]¡Gracias por jugar![/font][/b]
+        
+        [/center]"
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 1
