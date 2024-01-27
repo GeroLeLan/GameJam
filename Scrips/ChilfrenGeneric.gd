@@ -33,7 +33,7 @@ func capture_kid(t):
 
 func lose_kid():
 	#game_ref.lose_life()
-	game_ref.modifyTime(-5)
+	game_ref.modifyTime(-1)
 	if acompañanado:
 		player_ref.removeFromArray(self)
 	queue_free()

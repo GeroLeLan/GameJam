@@ -23,7 +23,7 @@ func _on_submit_pressed():
 	openleaderboard()
 	
 func openleaderboard():
-	var leaderboard_manager = preload("res://Scrips/leaderboard_manager.gd").new()
+	leaderboard_manager = preload("res://Scrips/leaderboard_manager.gd").new()
 	var leaderboard_data = leaderboard_manager.load_leaderboard_data()
 	var vbox = $CanvasLayer/Panel/VBoxContainer
 	
