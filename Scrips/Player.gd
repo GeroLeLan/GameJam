@@ -31,7 +31,11 @@ func _physics_process(delta):
 			$Camera2D.transform.x= Vector2(direction.x,0)
 	else:
 		velocity = direction
-		
+	
+	if(velocity != Vector2.ZERO):
+		$AnimatedSprite2D.play("movement")
+	else:
+		$AnimatedSprite2D.play("default")
 	move_and_slide() 
 
 
