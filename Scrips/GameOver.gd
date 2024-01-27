@@ -6,18 +6,36 @@ extends Node2D
 func _ready():
 	$CanvasLayer/Panel/ScoreLabel.text = "SCORE: "+str(global.score)
 
-
-
 func _on_quit_button_pressed():
-	var nombre = $CanvasLayer/Panel/LineEdit.text
-	leaderboard_manager.update_leaderboard(global.score,nombre)
 	get_tree().quit()
 
 
-
 func _on_button_pressed():
-	var nombre = $CanvasLayer/Panel/LineEdit.text
-	leaderboard_manager.update_leaderboard(global.score,nombre)
 	global.score = 0
 	get_tree().change_scene_to_file("res://Scenes/game.tscn")
 	pass # Replace with function body.
+
+
+func _on_submit_pressed():
+	var nombre = $CanvasLayer/Panel/LineEdit.text
+	leaderboard_manager.update_leaderboard(global.score,nombre)
+	$CanvasLayer/Panel/Submit.disabled = true
+	openleaderboard()
+	
+func openleaderboard():
+	var leaderboard_manager = preload("res://Scrips/leaderboard_manager.gd").new()
+	var leaderboard_data = leaderboard_manager.load_leaderboard_data()
+	var vbox = $CanvasLayer/Panel/VBoxContainer
+	
+	for entry in leaderboard_data:
+		var hbox : HBoxContainer = HBoxContainer.new()
+		
+		var label_name : Label = Label.new()
+		label_name.text = entry["name"]
+		var label_score : Label = Label.new()
+		label_score.text = str(entry["score"])
+		label_name.set_custom_minimum_size(Vector2(100, label_score.get_minimum_size().y))
+		label_score.set_custom_minimum_size(Vector2(50, label_score.get_minimum_size().y))
+		hbox.add_child(label_name)
+		hbox.add_child(label_score)
+		vbox.add_child(hbox)
