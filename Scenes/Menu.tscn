@@ -50,8 +50,16 @@ stream = ExtResource("2_hqwda")
 volume_db = -14.054
 autoplay = true
 
+[node name="Quit" type="Button" parent="."]
+offset_left = 412.0
+offset_top = 359.0
+offset_right = 529.0
+offset_bottom = 390.0
+text = "Salir del juego"
+
 [connection signal="pressed" from="Button_Start" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="Button_leaderboard" to="." method="_on_button_leaderboard_pressed"]
 [connection signal="pressed" from="Button_Settings" to="." method="_on_button_settings_pressed"]
 [connection signal="pressed" from="Button_Credits" to="." method="_on_button_credits_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
