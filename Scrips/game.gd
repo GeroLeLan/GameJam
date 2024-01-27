@@ -7,9 +7,9 @@ const SPAWN_TIMER_MAX = 5.0
 @onready var lives_label = $UI_Layer/Panel/HBoxContainer/LivesLabel
 @onready var score_label = $UI_Layer/Panel/HBoxContainer/ScoreLabel
 
-@onready var spawn_timer = $SpawnTimer
-@onready var kid_spawnner = $KidSpawnner
-@onready var dificultTimer = $DifficultTimer
+
+
+
 @onready var GlobalDificulty = 1
 @onready var lives = 3
 
