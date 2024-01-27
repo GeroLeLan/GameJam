@@ -1,0 +1,129 @@
+[gd_scene load_steps=2 format=3 uid="uid://lwdkc0vkml3w"]
+
+[ext_resource type="Script" path="res://Scenes/how_to_play.gd" id="1_i7ki0"]
+
+[node name="HowToPlay" type="Node2D"]
+script = ExtResource("1_i7ki0")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 653.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 725.0
+offset_top = 573.0
+offset_right = 876.0
+offset_bottom = 620.0
+text = "Volver al menu
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 439.0
+offset_top = 29.0
+offset_right = 687.0
+offset_bottom = 74.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Como Jugar"
+horizontal_alignment = 1
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 62.0
+offset_top = 474.0
+offset_right = 483.0
+offset_bottom = 634.0
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 2
+offset_left = 131.0
+offset_top = 7.0
+offset_right = 281.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 32
+text = "Controles"
+horizontal_alignment = 1
+
+[node name="Panel3" type="Panel" parent="."]
+offset_left = 507.0
+offset_top = 97.0
+offset_right = 1098.0
+offset_bottom = 551.0
+
+[node name="Label" type="Label" parent="Panel3"]
+layout_mode = 2
+offset_left = 216.0
+offset_top = 3.0
+offset_right = 372.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 32
+text = "Gameplay"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel3"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 114.0
+offset_right = 375.0
+offset_bottom = 137.0
+text = "Acercate a los nenes para que te sigan!"
+
+[node name="Label3" type="Label" parent="Panel3"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 175.0
+offset_right = 537.0
+offset_bottom = 198.0
+text = "Llevalos a los distintos puntos de entretenimiento del mapa
+"
+
+[node name="Label4" type="Label" parent="Panel3"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 236.0
+offset_right = 537.0
+offset_bottom = 337.0
+text = "Cada punto de entretenimiento tiene una secuencia… lleva a los nenes cumpliendo esa secuencia para obtener más puntos!
+
+"
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="Panel3"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 332.0
+offset_right = 537.0
+offset_bottom = 433.0
+text = "¡Cuidado! Si el medidor de diversión de un nene se vacía, perderás una vida.
+
+"
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 63.0
+offset_top = 95.0
+offset_right = 483.0
+offset_bottom = 469.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 69.0
+offset_top = 20.0
+offset_right = 348.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 32
+text = "Objetivo del juego"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 81.0
+offset_right = 399.0
+offset_bottom = 364.0
+text = "Te contrataron para animar un cumpleañitos y acabas de descubrir que la situación es caótica: Hay nenes gritando por todos lados, tiraron un arcade y ¿¡eso es fuego!? Tenes que actuar y rapido!
+
+Para calmar a estos pibitos, llevalos a lugares donde puedan entretenerse. Pero tene cuidado! Si los dejas sin entretener por mucho tiempo, entonces se iran y el jefe te dará una advertencia, 3 de ellas y serás despedido!
+"
+autowrap_mode = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
