@@ -17,7 +17,8 @@ func _physics_process(delta):
 	direction.y= Input.get_action_strength("Move_Down") - Input.get_action_strength("Move_Up") 
 	direction.normalized()
 	
-	
+	if Input.is_action_just_pressed("honk_input"):
+		$HonkPlayer.play(0.0)
 
 	if(direction):
 		velocity = direction * MAX_VELOCITY

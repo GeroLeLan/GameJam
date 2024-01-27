@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://4hg7xf2kanx7"]
+[gd_scene load_steps=7 format=3 uid="uid://4hg7xf2kanx7"]
 
 [ext_resource type="Script" path="res://Scrips/Player.gd" id="1_nnpt4"]
 [ext_resource type="Texture2D" uid="uid://b6xy3rhl8i3jy" path="res://icon.svg" id="2_y4ct6"]
 [ext_resource type="PackedScene" uid="uid://b703daluomcwp" path="res://Scenes/arrow_pointer.tscn" id="3_51bky"]
+[ext_resource type="AudioStream" uid="uid://cc07utku5iarm" path="res://honk.wav" id="4_0esov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5qar"]
 size = Vector2(31, 47)
@@ -35,5 +36,8 @@ position = Vector2(0, -1)
 
 [node name="Arrow2" parent="." instance=ExtResource("3_51bky")]
 rotation = 3.14159
+
+[node name="HonkPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0esov")
 
 [connection signal="body_entered" from="Child_Colector" to="." method="_on_child_colector_body_entered"]
