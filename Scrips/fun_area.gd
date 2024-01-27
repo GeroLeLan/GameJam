@@ -41,12 +41,11 @@ func initialize_chain():
 
 func count_check(target_chain,current_chain):
 	var count = 0
-	if current_chain.size() == 0:
-		return count
-	for i in range(target_chain.size() - current_chain.size() + 1):
+
+	for i in range(current_chain.size() - target_chain.size() + 1):
 		var m = true
-		for j in range(current_chain.size()):
-			if target_chain[i + j] != current_chain[j]:
+		for j in range(target_chain.size()):
+			if current_chain[i + j] != target_chain[j]:
 				m = false
 				break
 		if m:
@@ -66,18 +65,10 @@ func calculate_score(player,chain):
 		kid.queue_free()
 	
 	# Calculo la cantidad de veces que se verifica la cadena.
-	print(count_check(target_chain,int_chain))
+	var chain_count = count_check(target_chain,int_chain)
+	var result = base_score*(size - chain_count*chain_size) + chain_count*chain_score
 	
 	
-	# chain es un array de pibitos
-	var sum = 0
-	var chain_size = chain.size()
-	for i in range(chain.size()):
-		var kid = chain.pop_front()
-		sum += kid.score
-		player.array.erase(kid)
-		kid.queue_free()		
-	var result = int(int(sum)*min(chain_size,5))	# 5 porque si
 	return result
 
 
