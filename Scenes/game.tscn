@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://svcat5twp0tj"]
+[gd_scene load_steps=9 format=3 uid="uid://svcat5twp0tj"]
 
 [ext_resource type="Script" path="res://Scrips/game.gd" id="1_pmwlm"]
+[ext_resource type="PackedScene" uid="uid://3o250xsddlkc" path="res://Scenes/test_map.tscn" id="2_2wdq5"]
 [ext_resource type="PackedScene" uid="uid://gg17sin70m6c" path="res://Scenes/kid_spawnner.tscn" id="2_ac2h1"]
 [ext_resource type="PackedScene" uid="uid://4hg7xf2kanx7" path="res://Scenes/Player.tscn" id="3_0vxsx"]
 [ext_resource type="PackedScene" uid="uid://ddu8fugi0j1pj" path="res://Scenes/fun_area.tscn" id="4_e2boj"]
@@ -19,6 +20,9 @@ script = ExtResource("1_pmwlm")
 offset_right = 1153.0
 offset_bottom = 646.0
 color = Color(0.486275, 0.486275, 0.486275, 1)
+
+[node name="testMap" parent="." instance=ExtResource("2_2wdq5")]
+position = Vector2(515, 427)
 
 [node name="FunArea" parent="." instance=ExtResource("4_e2boj")]
 position = Vector2(1075, 325)
@@ -66,6 +70,7 @@ wait_time = 90.0
 [node name="Bordes" type="Node2D" parent="."]
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Bordes"]
+position = Vector2(179, -1586)
 collision_mask = 0
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Bordes/StaticBody2D3"]
@@ -91,9 +96,33 @@ wait_time = 5.0
 wait_time = 5.0
 
 [node name="SpawnArea" parent="." instance=ExtResource("5_rwpsg")]
-position = Vector2(22, 103)
+position = Vector2(289, 262)
+
+[node name="CollisionShape2D" parent="SpawnArea" index="0"]
+position = Vector2(287, 127.625)
+
+[node name="SpawnArea2" parent="." instance=ExtResource("5_rwpsg")]
+
+[node name="CollisionShape2D" parent="SpawnArea2" index="0"]
+position = Vector2(-80, -309)
+
+[node name="SpawnArea3" parent="." instance=ExtResource("5_rwpsg")]
+
+[node name="CollisionShape2D" parent="SpawnArea3" index="0"]
+position = Vector2(1262, -288)
+
+[node name="SpawnArea4" parent="." instance=ExtResource("5_rwpsg")]
+position = Vector2(289, 262)
+
+[node name="CollisionShape2D" parent="SpawnArea4" index="0"]
+position = Vector2(296, -556)
 
 [connection signal="timeout" from="UI_Layer/Panel/LevelUpTimer" to="." method="_on_level_up_timer_timeout"]
 [connection signal="timeout" from="UI_Layer/Panel/TiempoLimite" to="." method="_on_tiempo_limite_timeout"]
 [connection signal="timeout" from="DifficultTimer" to="." method="_on_difficult_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+
+[editable path="SpawnArea"]
+[editable path="SpawnArea2"]
+[editable path="SpawnArea3"]
+[editable path="SpawnArea4"]

@@ -3,17 +3,17 @@
 [ext_resource type="Script" path="res://Scrips/SpawnArea.gd" id="1_dcqd5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3vjm"]
-size = Vector2(1095.5, 464)
+size = Vector2(483.375, 427.25)
 
 [node name="SpawnArea" type="Area2D"]
 script = ExtResource("1_dcqd5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(555.25, 236)
+position = Vector2(-249.688, 0)
 shape = SubResource("RectangleShape2D_l3vjm")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.985
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

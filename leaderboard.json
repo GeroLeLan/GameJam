@@ -1,5 +1,9 @@
 [
 	{
+		"name": "aaaaaaaaaaaaaaaaa",
+		"score": 1170
+	},
+	{
 		"name": "Messi",
 		"score": 902
 	},
@@ -12,6 +16,10 @@
 		"score": 680
 	},
 	{
+		"name": "Gero",
+		"score": 500
+	},
+	{
 		"name": "test2",
 		"score": 440
 	},
@@ -22,14 +30,6 @@
 	{
 		"name": "Goe",
 		"score": 370
-	},
-	{
-		"name": "TEST2",
-		"score": 150
-	},
-	{
-		"name": "TEST2",
-		"score": 150
 	},
 	{
 		"name": "TEST2",
