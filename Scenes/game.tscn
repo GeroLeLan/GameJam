@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://svcat5twp0tj"]
+[gd_scene load_steps=8 format=3 uid="uid://svcat5twp0tj"]
 
 [ext_resource type="Script" path="res://Scrips/game.gd" id="1_pmwlm"]
 [ext_resource type="PackedScene" uid="uid://gg17sin70m6c" path="res://Scenes/kid_spawnner.tscn" id="2_ac2h1"]
 [ext_resource type="PackedScene" uid="uid://4hg7xf2kanx7" path="res://Scenes/Player.tscn" id="3_0vxsx"]
 [ext_resource type="PackedScene" uid="uid://ddu8fugi0j1pj" path="res://Scenes/fun_area.tscn" id="4_e2boj"]
+[ext_resource type="PackedScene" uid="uid://cr1wqjnqrxa1b" path="res://Scenes/spawn_area.tscn" id="5_rwpsg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ln4w"]
 size = Vector2(17, 653)
@@ -85,6 +86,9 @@ wait_time = 5.0
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="SpawnArea" parent="." instance=ExtResource("5_rwpsg")]
+position = Vector2(15, 92)
 
 [connection signal="timeout" from="UI_Layer/Panel/LevelUpTimer" to="." method="_on_level_up_timer_timeout"]
 [connection signal="timeout" from="DifficultTimer" to="." method="_on_difficult_timer_timeout"]
