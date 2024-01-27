@@ -9,7 +9,6 @@ func load_leaderboard_data():
 		var error = json.parse(file.get_as_text())
 		if error==OK:
 			json_data = json.data
-			print( json_data )
 			if typeof(json_data) == TYPE_DICTIONARY:
 				json_data = [json_data]
 		file.close()
