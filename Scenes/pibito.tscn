@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scrips/pibito.gd" id="1_lueui"]
 [ext_resource type="Texture2D" uid="uid://j6vivrdd6cjw" path="res://Sprites/pibita .png" id="2_1lhtc"]
 [ext_resource type="Texture2D" uid="uid://d11alfoht4hke" path="res://Sprites/pibito 1.png" id="3_unjk8"]
-[ext_resource type="Texture2D" uid="uid://dduhy0w084pao" path="res://Sprites/pibito 2.png" id="4_fp5he"]
+[ext_resource type="Texture2D" uid="uid://b2itewpuahnb1" path="res://Sprites/pibito 3.png" id="4_fqiwb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8axhb"]
 animations = [{
@@ -25,7 +25,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_fp5he")
+"texture": ExtResource("4_fqiwb")
 }],
 "loop": true,
 "name": &"idle square",
@@ -33,27 +33,28 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_68d6v"]
-radius = 13.0
-height = 26.0
+radius = 9.0
+height = 18.0
 
 [node name="PibitoGreen" type="CharacterBody2D" groups=["children"]]
+scale = Vector2(1.3, 1.3)
 collision_layer = 2
 script = ExtResource("1_lueui")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -9)
+position = Vector2(-3.69549e-06, -7.15256e-07)
 scale = Vector2(1.5, 1.546)
 sprite_frames = SubResource("SpriteFrames_8axhb")
-animation = &"idle"
+animation = &"idle naranja"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 1)
+position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_68d6v")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = -26.0
-offset_top = 23.0
-offset_right = 26.0
-offset_bottom = 36.0
+offset_left = -25.0
+offset_top = 21.0
+offset_right = 27.0
+offset_bottom = 34.0
 value = 100.0
 show_percentage = false

@@ -41,9 +41,9 @@ func initialize_chain():
 		elif element == 1:
 			textRect.texture = preload("res://Sprites/pibito 1.png")
 		else:
-			textRect.texture = preload("res://Sprites/pibito 2.png")
+			textRect.texture = preload("res://Sprites/pibito 3.png")
 		#textRect.expand_mode = TextureRect.EXPAND_FIT_HEIGHT
-		textRect.expand_mode = 2
+		textRect.expand_mode = 3
 		h_box_container.add_child(textRect)
 	
 	

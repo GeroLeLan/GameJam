@@ -1,26 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://4hg7xf2kanx7"]
+[gd_scene load_steps=8 format=3 uid="uid://4hg7xf2kanx7"]
 
 [ext_resource type="Script" path="res://Scrips/Player.gd" id="1_nnpt4"]
-[ext_resource type="Texture2D" uid="uid://b6xy3rhl8i3jy" path="res://icon.svg" id="2_y4ct6"]
+[ext_resource type="Texture2D" uid="uid://o1u1p5sljlx2" path="res://Sprites/payaso.png" id="2_g2lv7"]
 [ext_resource type="PackedScene" uid="uid://b703daluomcwp" path="res://Scenes/arrow_pointer.tscn" id="3_51bky"]
 [ext_resource type="AudioStream" uid="uid://cc07utku5iarm" path="res://honk.wav" id="4_0esov"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5qar"]
-size = Vector2(31, 47)
+[sub_resource type="SpriteFrames" id="SpriteFrames_omjii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g2lv7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jkv6t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8dn38"]
 
 [node name="Payaso" type="CharacterBody2D"]
+scale = Vector2(1.3, 1.3)
 script = ExtResource("1_nnpt4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -3.5)
-shape = SubResource("RectangleShape2D_l5qar")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_omjii")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.250001, -3)
-scale = Vector2(0.253906, 0.40625)
-texture = ExtResource("2_y4ct6")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 14.5)
+shape = SubResource("CapsuleShape2D_jkv6t")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
