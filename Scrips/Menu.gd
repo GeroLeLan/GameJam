@@ -12,6 +12,8 @@ func _on_button_leaderboard_pressed():
 	get_tree().change_scene_to_file("res://Scenes/leader_board.tscn")
 
 
-
 func _on_button_settings_pressed():
 	get_tree().change_scene_to_file("res://Scenes/settings.tscn")
+	
+func _on_button_credits_pressed():
+	get_tree().change_scene_to_file("res://Scenes/credits.tscn")

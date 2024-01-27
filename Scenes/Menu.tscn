@@ -29,6 +29,14 @@ offset_right = 503.0
 offset_bottom = 305.0
 text = "Settings"
 
+[node name="Button_Credits" type="Button" parent="."]
+offset_left = 435.0
+offset_top = 318.0
+offset_right = 505.0
+offset_bottom = 349.0
+text = "Credits"
+
 [connection signal="pressed" from="Button_Start" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="Button_leaderboard" to="." method="_on_button_leaderboard_pressed"]
 [connection signal="pressed" from="Button_Settings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="Button_Credits" to="." method="_on_button_credits_pressed"]
