@@ -8,6 +8,10 @@ var acompañanado =false
 # Experimento
 var player_position
 var target_position
+var xSize
+
+func _ready():
+	xSize = transform.x.x
 
 func set_direction():
 	player_position = target.position

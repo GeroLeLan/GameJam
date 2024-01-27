@@ -44,7 +44,7 @@ func _process(delta):
 	else:
 		sec = str(sec)
 	lives_label.text = "Time: "+str(minutos) + ":" + sec
-	print($UI_Layer/Panel/TiempoLimite.get_wait_time())
+
 
 func add_score(s):
 	global.score += int(s)

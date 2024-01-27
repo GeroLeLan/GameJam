@@ -9,7 +9,10 @@ var array = []
 var offsetX = -30
 var offsetY = -30
 
+var xSize
 
+func _ready():
+	xSize = transform.x.x
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO
@@ -22,6 +25,10 @@ func _physics_process(delta):
 
 	if(direction):
 		velocity = direction * MAX_VELOCITY
+		if(direction.x):
+			print(direction.x)
+			transform.x= Vector2(direction.x*xSize,0)
+			$Camera2D.transform.x= Vector2(direction.x,0)
 	else:
 		velocity = direction
 		
