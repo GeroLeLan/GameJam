@@ -45,7 +45,7 @@ func _physics_process(delta):
 		move_and_slide()
 
 func setColor():
-	if color==0:
+	if color == 0:
 		$AnimatedSprite2D.play("idle")
 	if color ==1: 
 		$AnimatedSprite2D.play("idle naranja")

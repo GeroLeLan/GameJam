@@ -44,7 +44,7 @@ script = ExtResource("1_ap3hn")
 position = Vector2(-3.8147e-06, -4)
 scale = Vector2(0.476563, 0.492188)
 sprite_frames = SubResource("SpriteFrames_8axhb")
-animation = &"idle square"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_68d6v")

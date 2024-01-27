@@ -20,4 +20,16 @@ offset_top = -64.0
 offset_right = 72.0
 offset_bottom = 65.0
 
+[node name="Panel" type="Panel" parent="."]
+offset_left = -61.0
+offset_top = 73.0
+offset_right = 54.0
+offset_bottom = 98.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 115.0
+offset_bottom = 24.0
+alignment = 1
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
