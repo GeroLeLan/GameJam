@@ -15,4 +15,12 @@ text = "START"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(472, 206)
 
+[node name="Button_leaderboard" type="Button" parent="."]
+offset_left = 410.0
+offset_top = 232.0
+offset_right = 533.0
+offset_bottom = 263.0
+text = "LEADERBOARD"
+
 [connection signal="pressed" from="Button_Start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="Button_leaderboard" to="." method="_on_button_leaderboard_pressed"]
