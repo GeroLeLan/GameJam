@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=3 format=3 uid="uid://kmo677v87lso"]
 
 [ext_resource type="Script" path="res://Credits.gd" id="1_r7gqv"]
@@ -117,3 +118,78 @@ scale = Vector2(0.799492, 0.818627)
 texture = ExtResource("2_lbrlh")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+=======
+[gd_scene load_steps=2 format=3 uid="uid://c0rdbo4bbd8qj"]
+
+[ext_resource type="Script" path="res://Scrips/credits.gd" id="1_mbfq8"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mbfq8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -312.0
+offset_right = 400.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]
+        
+       [b][font size=40]Créditos[/font][/b]
+
+        [b]Desarrollado por:[/b]
+        - Diego
+		- Gerónimo Le Lan Toussaint
+		- Juan
+        
+        [b]Gráficos:[/b]
+        - Beño
+        - Iago/yuyo
+
+        [b]Música:[/b]
+        - Pablo
+        - Nombre del Compositor 2
+
+        [b]Agradecimientos Especiales:[/b]
+        - Flor
+
+        [b][font size=30]¡Gracias por jugar![/font][/b]
+        
+        [/center]"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+>>>>>>> bfd0a739888103fbd74e35a16b3a5a707f5bbd0f

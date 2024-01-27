@@ -88,7 +88,7 @@ wait_time = 5.0
 wait_time = 5.0
 
 [node name="SpawnArea" parent="." instance=ExtResource("5_rwpsg")]
-position = Vector2(15, 92)
+position = Vector2(22, 103)
 
 [connection signal="timeout" from="UI_Layer/Panel/LevelUpTimer" to="." method="_on_level_up_timer_timeout"]
 [connection signal="timeout" from="DifficultTimer" to="." method="_on_difficult_timer_timeout"]
