@@ -8,6 +8,7 @@ var target_chain
 
 @onready var game_ref = get_parent()
 @onready var h_box_container = $Panel/HBoxContainer
+@onready var confetti_shooter = $ConfettiShooter
 
 func _ready():
 	initialize_chain()
@@ -68,6 +69,10 @@ func calculate_score(player,chain):
 	var chain_count = count_check(target_chain,int_chain)
 	var result = base_score*(size - chain_count*chain_size) + chain_count*chain_score
 	
+	if result > 0:
+		confetti_shooter.emitting = true
+		confetti_shooter.process_material = confetti_shooter.process_material.duplicate()
+		confetti_shooter.restart()
 	
 	return result
 
