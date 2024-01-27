@@ -8,8 +8,11 @@ func get_chain():
 var array = []
 var offsetX = -30
 var offsetY = -30
+var lastMovement = Vector2.ZERO
+var xSize
 
-
+func _ready():
+	xSize = transform.x.x
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO
@@ -22,9 +25,24 @@ func _physics_process(delta):
 
 	if(direction):
 		velocity = direction * MAX_VELOCITY
+		if(direction.x):
+			print(direction.x)
+			transform.x= Vector2(direction.x*xSize,0)
+			$Camera2D.transform.x= Vector2(direction.x,0)
 	else:
 		velocity = direction
-		
+	
+	if(velocity != Vector2.ZERO or lastMovement!= Vector2.ZERO):
+		if($AnimatedSprite2D.animation!="Star_movement") and ($AnimatedSprite2D.animation!="movement"):
+			$AnimatedSprite2D.play("Star_movement")
+		if($AnimatedSprite2D.animation=="Star_movement") and ($AnimatedSprite2D.animation!="movement" and $AnimatedSprite2D.frame_progress == 1.0):
+			$AnimatedSprite2D.play("movement")
+	else:
+		if($AnimatedSprite2D.animation!="End_movement") and ($AnimatedSprite2D.animation!="default"):
+			$AnimatedSprite2D.play("End_movement")
+		if($AnimatedSprite2D.animation=="End_movement") and ($AnimatedSprite2D.animation!="default" and $AnimatedSprite2D.frame_progress == 1.0):
+			$AnimatedSprite2D.play("default")
+	lastMovement = velocity
 	move_and_slide() 
 
 

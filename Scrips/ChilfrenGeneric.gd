@@ -8,6 +8,10 @@ var acompañanado =false
 # Experimento
 var player_position
 var target_position
+var xSize
+
+func _ready():
+	xSize = transform.x.x
 
 func set_direction():
 	player_position = target.position
@@ -33,7 +37,7 @@ func capture_kid(t):
 
 func lose_kid():
 	#game_ref.lose_life()
-	game_ref.modifyTime(-5)
+	game_ref.modifyTime(-1)
 	if acompañanado:
 		player_ref.removeFromArray(self)
 	queue_free()

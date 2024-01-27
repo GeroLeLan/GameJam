@@ -15,6 +15,7 @@ func set_collision(b):
 	collision_shape_2d.set_deferred("disabled",true)
 
 func _ready():
+	xSize = transform.x.x
 	game_ref = get_parent()
 	color = randi() % 3
 	sadness = SADNESS_METER_MAX
@@ -35,6 +36,8 @@ func _physics_process(delta):
 				progress_bar.value = sadness
 	
 	if(!acompañanado):
+		
+		
 		var collision = move_and_collide(velocity*delta)
 		
 		if collision: 
@@ -43,6 +46,10 @@ func _physics_process(delta):
 	else:
 		velocity = set_direction()*280
 		move_and_slide()
+	if(velocity.x):
+			var direction = velocity.x/abs(velocity.x)
+			transform.x= Vector2(direction*xSize,0)
+
 
 func setColor():
 	if color == 0:
