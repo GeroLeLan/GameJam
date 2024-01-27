@@ -28,11 +28,15 @@ func _physics_process(delta):
 	move_and_slide() 
 
 
-func set_arrow_target(t1,t2):
-	$Arrow1.origin_position = position
-	$Arrow2.origin_position = position
-	$Arrow1.target_position = t1
-	$Arrow2.target_position = t2
+func set_arrow_target(positions_array):
+	for pos in positions_array:
+		var new_arrow = preload("res://Scenes/arrow_pointer.tscn").instantiate()
+		new_arrow.origin_position = position
+		new_arrow.target_position = pos
+		add_child(new_arrow)
+	
+	
+
 
 func _on_child_colector_body_entered(body):
 	if body.is_in_group("children"):

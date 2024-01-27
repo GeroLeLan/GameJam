@@ -53,7 +53,7 @@ offset_right = 452.0
 offset_bottom = 169.0
 text = "Artista 2D
 
-Iago Su�ez"
+Iago Suárez"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="Panel"]
@@ -64,7 +64,7 @@ offset_right = 507.0
 offset_bottom = 360.0
 text = "Diseñador Grafico
 
-Jim Bernardo Eg�quiza Escobar
+Jim Bernardo Egúsquiza Escobar
 "
 horizontal_alignment = 1
 
@@ -74,7 +74,7 @@ offset_left = 10.0
 offset_top = 230.0
 offset_right = 234.0
 offset_bottom = 305.0
-text = "Dise�dor de Audio y Musica
+text = "Diseñador de Audio y Musica
 
 Pablo Duran"
 horizontal_alignment = 1

@@ -6,7 +6,7 @@ extends Node2D
 
 var target_chain
 
-@onready var game_ref = get_parent()
+@onready var game_ref = get_parent().get_parent()
 @onready var h_box_container = $Panel/HBoxContainer
 @onready var confetti_shooter = $ConfettiShooter
 

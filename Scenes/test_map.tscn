@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://3o250xsddlkc"]
 
-[ext_resource type="Script" path="res://Scenes/test_map.gd" id="1_0n2nq"]
+[ext_resource type="Script" path="res://Scrips/test_map.gd" id="1_0n2nq"]
 [ext_resource type="Texture2D" uid="uid://rej467mehbqt" path="res://Sprites/simple_tileset/survivalgame-terrian-cliffs.png" id="1_n8207"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iq4ff"]

@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://4hg7xf2kanx7"]
+[gd_scene load_steps=7 format=3 uid="uid://4hg7xf2kanx7"]
 
 [ext_resource type="Script" path="res://Scrips/Player.gd" id="1_nnpt4"]
 [ext_resource type="Texture2D" uid="uid://o1u1p5sljlx2" path="res://Sprites/payaso.png" id="2_g2lv7"]
-[ext_resource type="PackedScene" uid="uid://b703daluomcwp" path="res://Scenes/arrow_pointer.tscn" id="3_51bky"]
 [ext_resource type="AudioStream" uid="uid://cc07utku5iarm" path="res://honk.wav" id="4_0esov"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_omjii"]
@@ -41,12 +40,6 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Child_Colector"]
 scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_8dn38")
-
-[node name="Arrow1" parent="." instance=ExtResource("3_51bky")]
-position = Vector2(0, -1)
-
-[node name="Arrow2" parent="." instance=ExtResource("3_51bky")]
-rotation = 3.14159
 
 [node name="HonkPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_0esov")
