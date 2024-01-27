@@ -39,3 +39,7 @@ func openleaderboard():
 		hbox.add_child(label_name)
 		hbox.add_child(label_score)
 		vbox.add_child(hbox)
+
+
+func _on_button_2_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
