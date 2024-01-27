@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://4hg7xf2kanx7"]
+[gd_scene load_steps=6 format=3 uid="uid://4hg7xf2kanx7"]
 
 [ext_resource type="Script" path="res://Scrips/Player.gd" id="1_nnpt4"]
 [ext_resource type="Texture2D" uid="uid://b6xy3rhl8i3jy" path="res://icon.svg" id="2_y4ct6"]
+[ext_resource type="PackedScene" uid="uid://b703daluomcwp" path="res://Scenes/arrow_pointer.tscn" id="3_51bky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5qar"]
 size = Vector2(31, 47)
@@ -28,5 +29,11 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Child_Colector"]
 scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_8dn38")
+
+[node name="Arrow1" parent="." instance=ExtResource("3_51bky")]
+position = Vector2(0, -1)
+
+[node name="Arrow2" parent="." instance=ExtResource("3_51bky")]
+rotation = 3.14159
 
 [connection signal="body_entered" from="Child_Colector" to="." method="_on_child_colector_body_entered"]

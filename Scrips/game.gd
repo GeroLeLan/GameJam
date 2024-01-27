@@ -13,6 +13,9 @@ const SPAWN_TIMER_MAX = 5.0
 @onready var GlobalDificulty = 1
 @onready var lives = 3
 
+@onready var fun_area = $FunArea
+@onready var fun_area_2 = $FunArea2
+
 
 func _ready():
 	spawn_timer.start()
@@ -23,6 +26,7 @@ func _ready():
 	spawn_timer.wait_time = SPAWN_TIMER_MAX
 	for i in range(3):
 		kid_spawnner.spawn_kid_insideView()
+	$Payaso.set_arrow_target($FunArea.position,$FunArea2.position)
 
 func add_score(s):
 	global.score += int(s)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b703daluomcwp"]
+
+[ext_resource type="Script" path="res://Scrips/arrow_pointer.gd" id="1_5dmn2"]
+[ext_resource type="Texture2D" uid="uid://dj57fr768jkj2" path="res://Sprites/Pointer.png" id="1_cfnor"]
+
+[node name="ArrowPointer" type="Node2D"]
+script = ExtResource("1_5dmn2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(112, 0)
+texture = ExtResource("1_cfnor")
+region_enabled = true
+region_rect = Rect2(2, 9, 19, 14)
+
+[node name="ArrowPivot" type="Marker2D" parent="."]

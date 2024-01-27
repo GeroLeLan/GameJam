@@ -9,6 +9,8 @@ var array = []
 var offsetX = -30
 var offsetY = -30
 
+
+
 func _physics_process(delta):
 	var direction = Vector2.ZERO
 	direction.x= Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left") 
@@ -24,6 +26,12 @@ func _physics_process(delta):
 		
 	move_and_slide() 
 
+
+func set_arrow_target(t1,t2):
+	$Arrow1.origin_position = position
+	$Arrow2.origin_position = position
+	$Arrow1.target_position = t1
+	$Arrow2.target_position = t2
 
 func _on_child_colector_body_entered(body):
 	if body.is_in_group("children"):
