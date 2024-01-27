@@ -12,8 +12,17 @@ var target_chain
 
 func _ready():
 	initialize_chain()
-	
 
+
+
+func emit_balloon(count):
+	var values = [Color.AQUA, Color.RED, Color.BLUE_VIOLET, Color.GREEN, Color.YELLOW]
+	for i in range(count):
+		var balloon = preload("res://Scenes/balloon.tscn").instantiate()
+		balloon.modulate = values[randi() % values.size()]
+		$Path2D/PathFollow2D.progress_ratio = randf()
+		balloon.global_position = $Path2D/PathFollow2D.global_position
+		get_parent().add_child(balloon)
 
 func initialize_chain():
 	# Limpio todos los hijos del container
@@ -69,8 +78,13 @@ func calculate_score(player,chain):
 	var chain_count = count_check(target_chain,int_chain)
 	var result = base_score*(size - chain_count*chain_size) + chain_count*chain_score
 	
+	
+	if chain_count > 0:
+		emit_balloon(chain_count*3)
+	
 	if result > 0:
 		confetti_shooter.emitting = true
+		# VER: Podriamos hacer que a mas larga la cadena, mas confetti tira
 		confetti_shooter.process_material = confetti_shooter.process_material.duplicate()
 		confetti_shooter.restart()
 	

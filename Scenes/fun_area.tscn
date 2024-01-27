@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddu8fugi0j1pj"]
+[gd_scene load_steps=5 format=3 uid="uid://ddu8fugi0j1pj"]
 
 [ext_resource type="Script" path="res://Scrips/fun_area.gd" id="1_p4s8c"]
 [ext_resource type="PackedScene" uid="uid://bwkqoa64t48op" path="res://Scenes/confetti_shooter.tscn" id="2_qvv8u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odftp"]
 size = Vector2(144.5, 127)
+
+[sub_resource type="Curve2D" id="Curve2D_jcwqp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -74, -66, 0, 0, 0, 0, 71, -66)
+}
+point_count = 2
 
 [node name="FunArea" type="Node2D"]
 script = ExtResource("1_p4s8c")
@@ -37,5 +43,11 @@ layout_mode = 0
 offset_right = 115.0
 offset_bottom = 24.0
 alignment = 1
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_jcwqp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-74, -66)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
