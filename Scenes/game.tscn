@@ -77,7 +77,6 @@ autostart = true
 
 [node name="FunArea" parent="FunAreas" instance=ExtResource("4_e2boj")]
 position = Vector2(590, 452)
-area_name = "comida"
 
 [node name="FunArea2" parent="FunAreas" instance=ExtResource("4_e2boj")]
 position = Vector2(-64, -960)
@@ -87,6 +86,7 @@ chain_score = 200
 
 [node name="FunArea3" parent="FunAreas" instance=ExtResource("4_e2boj")]
 position = Vector2(1175, -354)
+area_name = "cocina"
 chain_size = 4
 chain_score = 500
 
