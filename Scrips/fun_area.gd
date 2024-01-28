@@ -4,6 +4,11 @@ extends Node2D
 @export var base_score = 10
 @export var chain_score = 100			# Definir luego por cada zona
 
+# Experimento Colores
+const COLOR_DISABLED = Color(Color.RED,0.3)
+const COLOR_ENABLED =  Color(Color.GREEN,0.3)
+
+
 var target_chain
 
 @onready var game_ref = get_parent().get_parent()
@@ -14,6 +19,7 @@ var enable = false
 
 func _ready():
 	initialize_chain()
+	self_modulate = COLOR_DISABLED
 
 
 
@@ -93,6 +99,7 @@ func calculate_score(player,chain):
 		# VER: Podriamos hacer que a mas larga la cadena, mas confetti tira
 		confetti_shooter.process_material = confetti_shooter.process_material.duplicate()
 		confetti_shooter.restart()
+		$AudioStreamPlayer.play()
 	
 	return result
 
@@ -109,10 +116,15 @@ func _on_area_2d_body_entered(body):
 			game_ref.updateComboPanel()
 			$AudioStreamPlayer.play()
 
+		var score = calculate_score(body,chain_array)
+		game_ref.add_score(score)
+		initialize_chain()
+		game_ref.updateComboPanel()
+
 func disableToggle():
 	enable = !enable
 	if(enable):
-		$ColorRect.set_color(Color.WHITE)
+		$ColorRect.set_color(COLOR_ENABLED)
 	else:
-		$ColorRect.set_color(Color.BLACK)
+		$ColorRect.set_color(COLOR_DISABLED)
 
