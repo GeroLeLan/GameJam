@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://lwdkc0vkml3w"]
+[gd_scene load_steps=17 format=3 uid="uid://lwdkc0vkml3w"]
 
 [ext_resource type="Script" path="res://Scrips/how_to_play.gd" id="1_i7ki0"]
 [ext_resource type="Texture2D" uid="uid://8ax1mqunykpm" path="res://Sprites/Key_Sprites/W-Key.png" id="2_b5fqe"]
@@ -11,8 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://j6vivrdd6cjw" path="res://Sprites/pibita .png" id="9_qalmp"]
 [ext_resource type="Texture2D" uid="uid://d11alfoht4hke" path="res://Sprites/pibito 1.png" id="10_othw8"]
 [ext_resource type="Texture2D" uid="uid://b2itewpuahnb1" path="res://Sprites/pibito 3.png" id="11_lxw3b"]
-[ext_resource type="Texture2D" uid="uid://2de0ojcq1q8u" path="res://Sprites/HowToPlay3.png" id="12_l0w0d"]
 [ext_resource type="Texture2D" uid="uid://bpelitbbdio8" path="res://Sprites/Key_Sprites/emote_exclamation.png" id="13_7tpng"]
+[ext_resource type="Texture2D" uid="uid://by5fgq1l40k1n" path="res://Sprites/Key_Sprites/emote_faceSad.png" id="14_fukol"]
+[ext_resource type="PackedScene" uid="uid://d0ng3qkhdm7cr" path="res://Scenes/Obstacles and Sprites/SalaDeJuegos/television.tscn" id="14_lt18v"]
+[ext_resource type="Texture2D" uid="uid://dm4d6rtgofgj1" path="res://Sprites/maquinitas_y_fulbo_rojo.png" id="15_wuigc"]
+[ext_resource type="Texture2D" uid="uid://dwsvpo43iosom" path="res://Sprites/fuchibol.png" id="16_4etgn"]
 
 [node name="HowToPlay" type="Node2D"]
 script = ExtResource("1_i7ki0")
@@ -132,7 +135,7 @@ offset_left = 245.0
 offset_top = 176.0
 offset_right = 563.0
 offset_bottom = 249.0
-text = "Llevalos a la zona de diversion que marca la flecha para sumar puntos!"
+text = "Llevalos a la zona de diversion disponible para sumar puntos!"
 horizontal_alignment = 2
 autowrap_mode = 2
 
@@ -149,15 +152,23 @@ autowrap_mode = 2
 
 [node name="Label5" type="Label" parent="Panel3"]
 layout_mode = 0
-offset_left = 173.0
-offset_top = 408.0
-offset_right = 573.0
-offset_bottom = 500.0
+offset_left = 165.0
+offset_top = 391.0
+offset_right = 565.0
+offset_bottom = 483.0
 text = "¡Cuidado! Si no cumplis la secuencia antes de que el medidor se acabe, perderas tiempo!
 
 "
 horizontal_alignment = 2
 autowrap_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel3"]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 331.0
+offset_right = 549.0
+offset_bottom = 351.0
+value = 70.0
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 63.0
@@ -169,7 +180,7 @@ offset_bottom = 416.0
 layout_mode = 2
 offset_left = 1.0
 offset_top = 9.0
-offset_right = 433.0
+offset_right = 420.0
 offset_bottom = 49.0
 theme_override_font_sizes/font_size = 20
 text = "Objetivo del juego"
@@ -203,6 +214,12 @@ position = Vector2(1080, 176)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("7_y325s")
 
+[node name="Payaso3" type="Sprite2D" parent="."]
+position = Vector2(647.5, 517.22)
+scale = Vector2(1.65625, 1.96875)
+texture = ExtResource("7_y325s")
+flip_h = true
+
 [node name="Right Arrow" type="Sprite2D" parent="."]
 position = Vector2(840, 160)
 rotation = 1.57421
@@ -216,6 +233,13 @@ scale = Vector2(3.16667, 3.16667)
 texture = ExtResource("8_bnlxd")
 region_enabled = true
 region_rect = Rect2(451, 434, 15, 12)
+
+[node name="Right Arrow5" type="Sprite2D" parent="."]
+position = Vector2(740, 281.5)
+scale = Vector2(2.5, 2.1875)
+texture = ExtResource("8_bnlxd")
+region_enabled = true
+region_rect = Rect2(72, 467, 16, 16)
 
 [node name="Right Arrow2" type="Sprite2D" parent="."]
 position = Vector2(856, 200)
@@ -248,6 +272,14 @@ texture = ExtResource("10_othw8")
 position = Vector2(984, 184)
 texture = ExtResource("10_othw8")
 
+[node name="Pibito5" type="Sprite2D" parent="."]
+position = Vector2(987, 396)
+texture = ExtResource("10_othw8")
+
+[node name="Pibito6" type="Sprite2D" parent="."]
+position = Vector2(1040, 396)
+texture = ExtResource("10_othw8")
+
 [node name="Pibito3" type="Sprite2D" parent="."]
 position = Vector2(840, 184)
 texture = ExtResource("11_lxw3b")
@@ -256,16 +288,48 @@ texture = ExtResource("11_lxw3b")
 position = Vector2(1016, 184)
 texture = ExtResource("11_lxw3b")
 
-[node name="HowToPlay3" type="Sprite2D" parent="."]
-position = Vector2(992, 416)
-scale = Vector2(0.886473, 0.82)
-texture = ExtResource("12_l0w0d")
-region_enabled = true
-region_rect = Rect2(5, 3, 197, 46)
+[node name="Pibito7" type="Sprite2D" parent="."]
+position = Vector2(1014, 395)
+texture = ExtResource("11_lxw3b")
 
 [node name="EmoteExclamation" type="Sprite2D" parent="."]
-position = Vector2(992, 376)
+position = Vector2(1000, 360)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_7tpng")
+
+[node name="EmoteExclamation2" type="Sprite2D" parent="."]
+position = Vector2(580, 462)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_7tpng")
+region_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 589.0
+offset_top = 265.0
+offset_right = 704.0
+offset_bottom = 345.0
+color = Color(0, 1, 0, 0.278431)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("14_lt18v")]
+position = Vector2(648, 248)
+scale = Vector2(2, 2)
+
+[node name="EmoteFaceSad" type="Sprite2D" parent="."]
+position = Vector2(647.5, 461.22)
+rotation = -0.0170931
+scale = Vector2(1.625, 1.875)
+texture = ExtResource("14_fukol")
+flip_h = true
+
+[node name="MaquinitasYFulboRojo" type="Sprite2D" parent="."]
+position = Vector2(582, 512)
+scale = Vector2(2.875, 2.75)
+texture = ExtResource("15_wuigc")
+region_enabled = true
+region_rect = Rect2(224, 48, 16, 16)
+
+[node name="Fuchibol" type="Sprite2D" parent="."]
+position = Vector2(957, 395)
+texture = ExtResource("16_4etgn")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

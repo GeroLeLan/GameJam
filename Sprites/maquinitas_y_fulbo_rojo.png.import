@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by5hpaukfktdw"
-path="res://.godot/imported/clock.png-1c96421d19e64e117d6ee3533e669e17.ctex"
+uid="uid://dm4d6rtgofgj1"
+path="res://.godot/imported/maquinitas_y_fulbo_rojo.png-ada6a4adc617eb227880ba542dd6df5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/ExternalSprites/clock.png"
-dest_files=["res://.godot/imported/clock.png-1c96421d19e64e117d6ee3533e669e17.ctex"]
+source_file="res://Sprites/maquinitas_y_fulbo_rojo.png"
+dest_files=["res://.godot/imported/maquinitas_y_fulbo_rojo.png-ada6a4adc617eb227880ba542dd6df5f.ctex"]
 
 [params]
 
