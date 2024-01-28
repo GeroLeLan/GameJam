@@ -37,7 +37,7 @@ text = "LEVEL UP"
 [node name="LevelUpTimer" type="Timer" parent="UI_Layer/Panel"]
 
 [node name="TiempoLimite" type="Timer" parent="UI_Layer/Panel"]
-wait_time = 90.0
+wait_time = 180.0
 
 [node name="ComboPanel" type="Panel" parent="UI_Layer"]
 offset_left = 730.0

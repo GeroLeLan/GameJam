@@ -130,6 +130,8 @@ func modifyTime(value):
 		timer.stop()
 		timer.set_wait_time(time)
 		timer.start()
+	else:
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 func SelectNewArea():
 	funAreaActive.disableToggle()
@@ -160,6 +162,7 @@ func selecZone():
 
 
 func _on_zone_randomizer_timeout():
+	modifyTime(-30)
 	SelectNewArea()
 	
 
