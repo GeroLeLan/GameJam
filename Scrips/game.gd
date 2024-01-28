@@ -146,7 +146,6 @@ func SelectNewArea():
 func selecZone():
 	var rng = RandomNumberGenerator.new()
 	var my_random_number = int(rng.randf_range(1,3.4)) #prioriza 1 y 2, 3 menos probable pero mas dificil
-	print(my_random_number)
 	if(my_random_number == 1 and funAreaActive == fun_area):
 		funAreaActive = fun_area_2
 	elif(my_random_number == 2 and funAreaActive == fun_area_2):

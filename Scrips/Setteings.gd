@@ -10,7 +10,6 @@ func _ready():
 		$HSlider.value =  AudioServer.get_bus_volume_db(AudioServer.get_bus_index('Master'))
 
 func _on_h_slider_value_changed(value):
-	print(value)
 	if(value == MIN_VALUE):
 		AudioServer.set_bus_mute(AudioServer.get_bus_index('Master'), true)
 	else:
