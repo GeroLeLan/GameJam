@@ -22,9 +22,9 @@ func _ready():
 	
 	if velocity == Vector2.ZERO:
 		velocity = Vector2.RIGHT.rotated(randf_range(0,TAU)) * speed * dificulty
+	setColor()
 
 func _physics_process(delta):
-	setColor()
 	if sadness <= 0.0:
 		lose_kid()
 	else:
@@ -49,6 +49,10 @@ func _physics_process(delta):
 	if(velocity.x):
 			var direction = velocity.x/abs(velocity.x)
 			transform.x= Vector2(direction*xSize,0)
+	if(velocity != Vector2.ZERO):
+		setAnimation()
+	else:
+		setColor()
 
 
 func setColor():
@@ -59,3 +63,11 @@ func setColor():
 	if color == 2:
 		$AnimatedSprite2D.play("idle square")
 
+func setAnimation():
+	print(color)
+	if color == 0:
+		$AnimatedSprite2D.play("movement")
+	if color == 1: 
+		$AnimatedSprite2D.play("movement naranja")
+	#if color == 2:
+		#$AnimatedSprite2D.play("movement square")

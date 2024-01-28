@@ -130,6 +130,5 @@ func selecZone():
 
 
 func _on_zone_randomizer_timeout():
-	print("HOLA")
 	SelectNewArea()
 	
