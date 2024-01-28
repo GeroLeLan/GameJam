@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bquv7akdqyvt5"]
+[gd_scene load_steps=5 format=3 uid="uid://bquv7akdqyvt5"]
 
 [ext_resource type="Script" path="res://Scrips/Menu.gd" id="1_ye3qd"]
 [ext_resource type="AudioStream" uid="uid://5a3omd6slart" path="res://audio/menu/menu3.ogg" id="2_hqwda"]
+[ext_resource type="AudioStream" uid="uid://biyi288gvf76p" path="res://audio/pasos/pasos1.ogg" id="3_aevi7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx8lf"]
 content_margin_left = 2.0
@@ -83,9 +84,20 @@ stream = ExtResource("2_hqwda")
 volume_db = -14.054
 autoplay = true
 
+[node name="Node" type="Node" parent="." groups=["sonidos"]]
+
+[node name="click" type="AudioStreamPlayer2D" parent="Node"]
+stream = ExtResource("3_aevi7")
+
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Button_Start" to="." method="_on_button_start_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button_Start" to="." method="_on_button_start_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Button_leaderboard" to="." method="_on_button_leaderboard_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button_leaderboard" to="." method="_on_button_leaderboard_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Button_Settings" to="." method="_on_button_settings_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button_Settings" to="." method="_on_button_settings_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Button_Credits" to="." method="_on_button_credits_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button_Credits" to="." method="_on_button_credits_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
