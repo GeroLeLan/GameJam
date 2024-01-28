@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://lwdkc0vkml3w"]
+[gd_scene load_steps=2 format=3 uid="uid://lwdkc0vkml3w"]
 
 [ext_resource type="Script" path="res://Scrips/how_to_play.gd" id="1_i7ki0"]
-[ext_resource type="FontFile" uid="uid://dv1n7ouq17eh" path="res://Font/RETRO_SPACE/RETRO_SPACE.ttf" id="2_0gufl"]
 
 [node name="HowToPlay" type="Node2D"]
 script = ExtResource("1_i7ki0")
@@ -11,122 +10,129 @@ offset_right = 1152.0
 offset_bottom = 653.0
 
 [node name="Button" type="Button" parent="."]
-offset_left = 725.0
-offset_top = 573.0
-offset_right = 876.0
-offset_bottom = 620.0
+offset_left = 672.0
+offset_top = 592.0
+offset_right = 928.0
+offset_bottom = 639.0
 text = "Volver al menu
 "
 
 [node name="Label" type="Label" parent="."]
-offset_left = 439.0
-offset_top = 29.0
-offset_right = 687.0
-offset_bottom = 74.0
+offset_left = 416.0
+offset_top = 18.0
+offset_right = 736.0
+offset_bottom = 63.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
-text = "Como Jugar"
+text = "COMO JUGAR"
 horizontal_alignment = 1
 
 [node name="Panel2" type="Panel" parent="."]
-offset_left = 62.0
-offset_top = 474.0
-offset_right = 483.0
-offset_bottom = 634.0
+offset_left = 64.0
+offset_top = 440.0
+offset_right = 485.0
+offset_bottom = 616.0
 
 [node name="Label" type="Label" parent="Panel2"]
 layout_mode = 2
-offset_left = 131.0
-offset_top = 7.0
-offset_right = 281.0
-offset_bottom = 52.0
-theme_override_font_sizes/font_size = 32
+offset_left = 122.0
+offset_top = 6.0
+offset_right = 302.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 20
 text = "Controles"
 horizontal_alignment = 1
 
 [node name="Panel3" type="Panel" parent="."]
 offset_left = 507.0
-offset_top = 97.0
+offset_top = 80.0
 offset_right = 1098.0
-offset_bottom = 551.0
+offset_bottom = 584.0
 
 [node name="Label" type="Label" parent="Panel3"]
 layout_mode = 2
-offset_left = 216.0
-offset_top = 3.0
-offset_right = 372.0
-offset_bottom = 48.0
-theme_override_font_sizes/font_size = 32
+offset_left = 133.0
+offset_top = 8.0
+offset_right = 485.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 20
 text = "Jugabilidad"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Panel3"]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 114.0
-offset_right = 375.0
-offset_bottom = 137.0
+offset_left = 13.0
+offset_top = 72.0
+offset_right = 317.0
+offset_bottom = 168.0
 text = "Acercate a los nenes para que te sigan!"
+autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="Panel3"]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 175.0
-offset_right = 537.0
-offset_bottom = 198.0
-text = "Llevalos a los distintos puntos de entretenimiento del mapa
-"
+offset_left = 117.0
+offset_top = 168.0
+offset_right = 579.0
+offset_bottom = 222.0
+text = "Llevalos a la zona de diversion que marca la flecha para sumar puntos!"
+horizontal_alignment = 2
+autowrap_mode = 2
 
 [node name="Label4" type="Label" parent="Panel3"]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 236.0
-offset_right = 537.0
-offset_bottom = 337.0
-text = "Cada punto de entretenimiento tiene una secuencia… lleva a los nenes cumpliendo esa secuencia para obtener más puntos!
+offset_left = 5.0
+offset_top = 280.0
+offset_right = 467.0
+offset_bottom = 391.0
+text = "Cada zona de diversion tiene una secuencia. Cumplila para ganar mas puntos y tiempo extra!
 
 "
 autowrap_mode = 2
 
 [node name="Label5" type="Label" parent="Panel3"]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 332.0
-offset_right = 537.0
-offset_bottom = 433.0
-text = "¡Cuidado! Si el medidor de diversión de un nene se vacía, perderás una vida.
+offset_left = 189.0
+offset_top = 408.0
+offset_right = 589.0
+offset_bottom = 500.0
+text = "¡Cuidado! Si no cumplis la secuencia antes de que el medidor se acabe, perderas tiempo!
 
 "
+horizontal_alignment = 2
 autowrap_mode = 2
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 63.0
-offset_top = 95.0
+offset_top = 79.0
 offset_right = 483.0
-offset_bottom = 469.0
+offset_bottom = 416.0
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 2
-offset_left = 69.0
-offset_top = 20.0
-offset_right = 348.0
-offset_bottom = 65.0
-theme_override_fonts/font = ExtResource("2_0gufl")
-theme_override_font_sizes/font_size = 32
+offset_left = 1.0
+offset_top = 9.0
+offset_right = 433.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 20
 text = "Objetivo del juego"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 81.0
-offset_right = 399.0
-offset_bottom = 364.0
-theme_override_fonts/font = ExtResource("2_0gufl")
-text = "Te contrataron para animar un cumpleañitos y acabas de descubrir que la situación es caótica: Hay nenes gritando por todos lados, tiraron un arcade y ¿¡eso es fuego!? Tenes que actuar y rapido!
+offset_left = 17.0
+offset_top = 57.0
+offset_right = 409.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 14
+text = "Hola, soy Yayo el payayo! 
 
-Para calmar a estos pibitos, llevalos a lugares donde puedan entretenerse. Pero tene cuidado! Si los dejas sin entretener por mucho tiempo, entonces se iran y el jefe te dará una advertencia, 3 de ellas y serás despedido!
-"
+
+Me contrataron como animador para un cumpleaños pero es un quilombo :(
+
+
+
+Ayudame a llevar a los pibes a las zonas de diversion de cada salita antes que se acabe el tiempo!"
+horizontal_alignment = 1
 autowrap_mode = 2
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

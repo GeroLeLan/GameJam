@@ -4,7 +4,7 @@ extends Node2D
 
 func _ready():
 	var leaderboard_data = leaderboard_manager.load_leaderboard_data()
-	var vbox = $VBoxContainer
+	var vbox = $Panel/VBoxContainer
 	
 	for entry in leaderboard_data:
 		var hbox : HBoxContainer = HBoxContainer.new()

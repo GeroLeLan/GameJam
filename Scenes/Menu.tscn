@@ -1,64 +1,91 @@
-[gd_scene load_steps=3 format=3 uid="uid://bquv7akdqyvt5"]
+[gd_scene load_steps=4 format=3 uid="uid://bquv7akdqyvt5"]
 
 [ext_resource type="Script" path="res://Scrips/Menu.gd" id="1_ye3qd"]
 [ext_resource type="AudioStream" uid="uid://5a3omd6slart" path="res://audio/menu/menu3.ogg" id="2_hqwda"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx8lf"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[node name="Menu" type="Node2D"]
 script = ExtResource("1_ye3qd")
 
-[node name="Button_Start" type="Button" parent="."]
-offset_left = 447.0
-offset_top = 180.0
-offset_right = 505.0
-offset_bottom = 211.0
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1151.0
+offset_bottom = 649.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 120.0
+offset_right = 912.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 32
+text = "YUPER YAYO EL PAYAYO!"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 232.0
+offset_right = 776.0
+offset_bottom = 528.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Button_Start" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_qx8lf")
 text = "JUGAR"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(472, 206)
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_qx8lf")
+text = "COMO JUGAR"
 
-[node name="Button_leaderboard" type="Button" parent="."]
-offset_left = 369.0
-offset_top = 232.0
-offset_right = 574.0
-offset_bottom = 263.0
+[node name="Button_leaderboard" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_qx8lf")
 text = "MEJORES PUNTUACIONES"
 
-[node name="Button_Settings" type="Button" parent="."]
-offset_left = 389.0
-offset_top = 274.0
-offset_right = 459.0
-offset_bottom = 305.0
+[node name="Button_Settings" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_qx8lf")
 text = "AJUSTES"
 
-[node name="Button_Credits" type="Button" parent="."]
-offset_left = 432.0
-offset_top = 318.0
-offset_right = 517.0
-offset_bottom = 349.0
-text = "CRéDITOS"
+[node name="Button_Credits" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_qx8lf")
+text = "CREDITOS"
 
-[node name="Button" type="Button" parent="."]
-offset_left = 482.0
-offset_top = 274.0
-offset_right = 585.0
-offset_bottom = 305.0
-text = "TUTORIAL"
+[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_qx8lf")
+text = "SALIR"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_hqwda")
 volume_db = -14.054
 autoplay = true
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 416.0
-offset_top = 379.0
-offset_right = 533.0
-offset_bottom = 410.0
-text = "SALIR"
-
-[connection signal="pressed" from="Button_Start" to="." method="_on_button_start_pressed"]
-[connection signal="pressed" from="Button_leaderboard" to="." method="_on_button_leaderboard_pressed"]
-[connection signal="pressed" from="Button_Settings" to="." method="_on_button_settings_pressed"]
-[connection signal="pressed" from="Button_Credits" to="." method="_on_button_credits_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button_Start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button_leaderboard" to="." method="_on_button_leaderboard_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button_Settings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button_Credits" to="." method="_on_button_credits_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
