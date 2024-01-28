@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bquv7akdqyvt5"]
+[gd_scene load_steps=6 format=3 uid="uid://bquv7akdqyvt5"]
 
 [ext_resource type="Script" path="res://Scrips/Menu.gd" id="1_ye3qd"]
-[ext_resource type="AudioStream" uid="uid://5a3omd6slart" path="res://audio/menu/menu3.ogg" id="2_hqwda"]
 [ext_resource type="AudioStream" uid="uid://biyi288gvf76p" path="res://audio/pasos/pasos1.ogg" id="3_aevi7"]
 [ext_resource type="AudioStream" uid="uid://fhx05tpmcbfm" path="res://audio/menu/click2.ogg" id="4_b2wco"]
 [ext_resource type="Texture2D" uid="uid://bnhx2keyr4j1d" path="res://Sprites/title.png" id="5_ghs27"]
@@ -86,6 +85,7 @@ region_enabled = true
 region_rect = Rect2(138, 0, 209, 114)
 
 [node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 616.0
 offset_right = 504.0
@@ -93,17 +93,13 @@ offset_bottom = 640.0
 text = "Juego para Global Game Jam 2024"
 
 [node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 640.0
 offset_top = 616.0
 offset_right = 1136.0
 offset_bottom = 640.0
 text = "Dulce de Leche Team"
 horizontal_alignment = 2
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_hqwda")
-volume_db = -14.054
-autoplay = true
 
 [node name="Node" type="Node" parent="." groups=["sonidos"]]
 

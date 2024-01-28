@@ -34,6 +34,8 @@ var dificultad_time = false
 
 
 func _ready():
+	MusicController.stop_music_menu()
+	
 	$UI_Layer/Panel/TiempoLimite.start()
 	var time = int($UI_Layer/Panel/TiempoLimite.time_left)
 	$UI_Layer/Panel/HBoxContainer/LevelUpLabel.visible = false

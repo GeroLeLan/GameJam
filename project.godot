@@ -18,6 +18,7 @@ config/icon="res://Sprites/icon.svg"
 [autoload]
 
 global="*res://Scrips/global.gd"
+MusicController="*res://autoload/MusicController.tscn"
 
 [gui]
 

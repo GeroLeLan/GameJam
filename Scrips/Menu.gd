@@ -3,6 +3,7 @@ extends Node2D
 
 
 func _ready():
+	MusicController.play_music()
 	leaderboard_manager.load_leaderboard_data() #inicializa el leaderboard si no existe
 
 func _on_button_start_pressed():
