@@ -106,6 +106,7 @@ func _on_area_2d_body_entered(body):
 		game_ref.add_score(score)
 		initialize_chain()
 		game_ref.updateComboPanel()
+		$AudioStreamPlayer.play()
 
 func disableToggle():
 	enable = !enable
