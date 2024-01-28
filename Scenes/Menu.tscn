@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bquv7akdqyvt5"]
+[gd_scene load_steps=7 format=3 uid="uid://bquv7akdqyvt5"]
 
 [ext_resource type="Script" path="res://Scrips/Menu.gd" id="1_ye3qd"]
 [ext_resource type="AudioStream" uid="uid://5a3omd6slart" path="res://audio/menu/menu3.ogg" id="2_hqwda"]
 [ext_resource type="AudioStream" uid="uid://biyi288gvf76p" path="res://audio/pasos/pasos1.ogg" id="3_aevi7"]
 [ext_resource type="AudioStream" uid="uid://fhx05tpmcbfm" path="res://audio/menu/click2.ogg" id="4_b2wco"]
+[ext_resource type="Texture2D" uid="uid://bnhx2keyr4j1d" path="res://Sprites/title.png" id="5_ghs27"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx8lf"]
 content_margin_left = 2.0
@@ -19,22 +20,12 @@ script = ExtResource("1_ye3qd")
 offset_right = 1151.0
 offset_bottom = 649.0
 
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 240.0
-offset_top = 120.0
-offset_right = 912.0
-offset_bottom = 192.0
-theme_override_font_sizes/font_size = 32
-text = "YUPER YAYO EL PAYAYO!"
-horizontal_alignment = 1
-
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 384.0
-offset_top = 232.0
-offset_right = 776.0
-offset_bottom = 528.0
+offset_left = 383.0
+offset_top = 264.0
+offset_right = 775.0
+offset_bottom = 560.0
 theme_override_constants/separation = 10
 alignment = 1
 
@@ -92,6 +83,11 @@ stream = ExtResource("3_aevi7")
 
 [node name="click_pressed" type="AudioStreamPlayer2D" parent="Node"]
 stream = ExtResource("4_b2wco")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(576, 151)
+scale = Vector2(1.98889, 1.66667)
+texture = ExtResource("5_ghs27")
 
 [connection signal="mouse_entered" from="Panel/VBoxContainer/Button_Start" to="." method="_on_button_start_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button_Start" to="." method="_on_button_start_pressed"]
