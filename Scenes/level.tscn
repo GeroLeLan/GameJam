@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cabk6sy0ci0sg"]
+[gd_scene load_steps=39 format=3 uid="uid://cabk6sy0ci0sg"]
 
 [ext_resource type="Texture2D" uid="uid://b8akqs415i2e6" path="res://Sprites/simple_tileset/TILEMAP_walls.png" id="1_x0b3r"]
 [ext_resource type="Texture2D" uid="uid://cg2taghmcqgqw" path="res://Sprites/Tileset/FULBO.png" id="2_8oerd"]
@@ -30,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://bf18uq8no7six" path="res://Sprites/ExternalSprites/bebidas/mate-01.png" id="28_qaean"]
 [ext_resource type="Texture2D" uid="uid://csogqhy0xejnf" path="res://Sprites/ExternalSprites/bebidas/cerveza-02.png" id="29_sxd42"]
 [ext_resource type="Texture2D" uid="uid://cx7hij3nf51r7" path="res://Sprites/ExternalSprites/comida/alfajor-maizena.png" id="30_ycxc6"]
+[ext_resource type="PackedScene" path="res://maquina2.tscn" id="31_srkuf"]
+[ext_resource type="PackedScene" path="res://maquina3.tscn" id="32_jelcu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evdn4"]
 texture = ExtResource("1_x0b3r")
@@ -1900,6 +1902,14 @@ region_rect = Rect2(34, 32, 29, 34)
 position = Vector2(231, 357)
 texture = ExtResource("27_8xpjb")
 
+[node name="Empanada8" type="Sprite2D" parent="."]
+position = Vector2(551, 487)
+texture = ExtResource("27_8xpjb")
+
+[node name="Empanada7" type="Sprite2D" parent="."]
+position = Vector2(180, 503)
+texture = ExtResource("27_8xpjb")
+
 [node name="Empanada2" type="Sprite2D" parent="."]
 position = Vector2(190, 289)
 texture = ExtResource("27_8xpjb")
@@ -1947,6 +1957,12 @@ texture = ExtResource("22_kiael")
 
 [node name="Gaseosa-cola7" type="Sprite2D" parent="."]
 position = Vector2(56, 419)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("22_kiael")
+
+[node name="Gaseosa-cola8" type="Sprite2D" parent="."]
+position = Vector2(-33, 498)
+rotation = 1.1973
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("22_kiael")
 
@@ -2014,3 +2030,57 @@ texture = ExtResource("29_sxd42")
 [node name="Alfajor-maizena" type="Sprite2D" parent="."]
 position = Vector2(230, -230)
 texture = ExtResource("30_ycxc6")
+
+[node name="maquina4" parent="." instance=ExtResource("31_srkuf")]
+position = Vector2(-702, 100)
+scale = Vector2(2, 2)
+
+[node name="maquina5" parent="." instance=ExtResource("32_jelcu")]
+position = Vector2(-705, 126)
+scale = Vector2(2, 2)
+
+[node name="maquina6" parent="." instance=ExtResource("14_e2xro")]
+position = Vector2(-703, 148)
+scale = Vector2(2, 2)
+
+[node name="maquina7" parent="." instance=ExtResource("31_srkuf")]
+position = Vector2(-520, 94)
+scale = Vector2(2, 2)
+
+[node name="maquina8" parent="." instance=ExtResource("32_jelcu")]
+position = Vector2(-523, 120)
+scale = Vector2(2, 2)
+
+[node name="maquina9" parent="." instance=ExtResource("14_e2xro")]
+position = Vector2(-521, 142)
+scale = Vector2(2, 2)
+
+[node name="maquina13" parent="." instance=ExtResource("14_e2xro")]
+position = Vector2(-3, 190)
+rotation = -0.18326
+scale = Vector2(2, 2)
+
+[node name="maquina14" parent="." instance=ExtResource("14_e2xro")]
+position = Vector2(0, 332)
+rotation = -1.5708
+scale = Vector2(2, 2)
+
+[node name="maquina10" parent="." instance=ExtResource("31_srkuf")]
+position = Vector2(-411, 213)
+rotation = 0.837758
+scale = Vector2(2, 2)
+
+[node name="maquina11" parent="." instance=ExtResource("32_jelcu")]
+position = Vector2(-164, 204)
+rotation = -1.54287
+scale = Vector2(2, 2)
+
+[node name="maquina15" parent="." instance=ExtResource("32_jelcu")]
+position = Vector2(-93, -163)
+rotation = -1.54287
+scale = Vector2(2, 2)
+
+[node name="maquina12" parent="." instance=ExtResource("14_e2xro")]
+position = Vector2(-456, 296)
+rotation = -1.31598
+scale = Vector2(2, 2)
