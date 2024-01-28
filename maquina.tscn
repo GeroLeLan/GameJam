@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://g3j8cxp372ng"]
+
+[ext_resource type="Texture2D" uid="uid://dm4d6rtgofgj1" path="res://Sprites/maquinitas_y_fulbo_rojo.png" id="1_lmoox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsoi4"]
+size = Vector2(23, 34)
+
+[node name="maquina" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="MaquinitasYFulboRojo" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(18, 21)
+texture = ExtResource("1_lmoox")
+region_enabled = true
+region_rect = Rect2(62.5084, 26.5883, 27.4916, 37.4117)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(17.5, 22)
+shape = SubResource("RectangleShape2D_jsoi4")
