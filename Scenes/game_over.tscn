@@ -62,7 +62,7 @@ offset_left = 167.0
 offset_top = 156.0
 offset_right = 302.0
 offset_bottom = 189.0
-max_length = 17
+max_length = 6
 
 [node name="Submit" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0

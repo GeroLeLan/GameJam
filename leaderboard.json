@@ -4,12 +4,16 @@
 		"score": 1340
 	},
 	{
-		"name": "aaaaaaaaaaaaaaaaa",
+		"name": "aaaaaa",
 		"score": 1170
 	},
 	{
 		"name": "Messi",
 		"score": 902
+	},
+	{
+		"name": "Jhon",
+		"score": 800
 	},
 	{
 		"name": "ANDA?",
@@ -24,15 +28,11 @@
 		"score": 650
 	},
 	{
-		"name": "",
+		"name": "Pepe",
 		"score": 650
 	},
 	{
 		"name": "Gero",
 		"score": 500
-	},
-	{
-		"name": "test2",
-		"score": 440
 	}
 ]
