@@ -4,8 +4,8 @@ var json = JSON.new()
 
 func load_leaderboard_data():
 	var json_data = []
-	if FileAccess.file_exists("res://leaderboard.json"):
-		var file= FileAccess.open("res://leaderboard.json", FileAccess.READ)
+	if FileAccess.file_exists("user://leaderboard.json"):
+		var file= FileAccess.open("user://leaderboard.json", FileAccess.READ)
 		var error = json.parse(file.get_as_text())
 		if error==OK:
 			json_data = json.data
@@ -15,7 +15,7 @@ func load_leaderboard_data():
 	return json_data
 
 func save_leaderboard_data(leaderboard_data):
-	var file = FileAccess.open("res://leaderboard.json", FileAccess.WRITE)
+	var file = FileAccess.open("user://leaderboard.json", FileAccess.WRITE)
 	var json_text = json.stringify(leaderboard_data, "\t", true, false)
 	file.store_line(json_text)
 	file.close()
