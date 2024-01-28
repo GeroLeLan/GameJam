@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddu8fugi0j1pj"]
+[gd_scene load_steps=11 format=3 uid="uid://ddu8fugi0j1pj"]
 
 [ext_resource type="Script" path="res://Scrips/fun_area.gd" id="1_p4s8c"]
 [ext_resource type="PackedScene" uid="uid://bwkqoa64t48op" path="res://Scenes/confetti_shooter.tscn" id="2_qvv8u"]
 [ext_resource type="AudioStream" uid="uid://dingqk2otf2ie" path="res://audio/risas/risa1.ogg" id="3_e40xa"]
+[ext_resource type="AudioStream" uid="uid://buetgxsdfj6wj" path="res://audio/risas/risa2.ogg" id="4_56iqx"]
+[ext_resource type="AudioStream" uid="uid://cmgv0xtc7xhbj" path="res://audio/risas/risa3.ogg" id="5_xph5t"]
+[ext_resource type="AudioStream" uid="uid://eb5qeb837xv8" path="res://audio/risas/risa5.ogg" id="6_gtrny"]
+[ext_resource type="AudioStream" uid="uid://c2arxswiu4kte" path="res://audio/risas/risa4.ogg" id="7_oh2wn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odftp"]
 size = Vector2(144.5, 127)
@@ -12,6 +16,19 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -74, -66, 0, 0, 0, 0, 71, -66)
 }
 point_count = 2
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e0hs4"]
+streams_count = 5
+stream_0/stream = ExtResource("3_e40xa")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_56iqx")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("5_xph5t")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("6_gtrny")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("7_oh2wn")
+stream_4/weight = 1.0
 
 [node name="FunArea" type="Node2D"]
 script = ExtResource("1_p4s8c")
@@ -56,6 +73,6 @@ curve = SubResource("Curve2D_jcwqp")
 position = Vector2(-74, -66)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_e40xa")
+stream = SubResource("AudioStreamRandomizer_e0hs4")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

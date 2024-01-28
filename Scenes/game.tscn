@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://svcat5twp0tj"]
+[gd_scene load_steps=7 format=3 uid="uid://svcat5twp0tj"]
 
 [ext_resource type="Script" path="res://Scrips/game.gd" id="1_pmwlm"]
 [ext_resource type="PackedScene" uid="uid://3o250xsddlkc" path="res://Scenes/test_map.tscn" id="2_2wdq5"]
 [ext_resource type="PackedScene" uid="uid://4hg7xf2kanx7" path="res://Scenes/Player.tscn" id="3_0vxsx"]
 [ext_resource type="PackedScene" uid="uid://ddu8fugi0j1pj" path="res://Scenes/fun_area.tscn" id="4_e2boj"]
 [ext_resource type="PackedScene" uid="uid://cr1wqjnqrxa1b" path="res://Scenes/spawn_area.tscn" id="5_rwpsg"]
+[ext_resource type="AudioStream" uid="uid://b3mx58bfipuxo" path="res://audio/juego/temaPrincipal.ogg" id="6_oksa4"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(7, 16)
@@ -115,6 +116,10 @@ position = Vector2(-507, 233)
 
 [node name="ZoneRandomizer" type="Timer" parent="."]
 wait_time = 40.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_oksa4")
+autoplay = true
 
 [connection signal="timeout" from="UI_Layer/Panel/LevelUpTimer" to="." method="_on_level_up_timer_timeout"]
 [connection signal="timeout" from="UI_Layer/Panel/TiempoLimite" to="." method="_on_tiempo_limite_timeout"]
