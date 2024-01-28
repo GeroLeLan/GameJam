@@ -197,6 +197,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="Label7" type="Label" parent="Panel2/Label/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Argentinian Assets Pack - Martin Asteasuain
+
+https://kwyjibo.itch.io/argentinian-assets-pack"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Graficos2" type="Label" parent="Panel2/Label/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
@@ -210,6 +221,28 @@ theme_override_font_sizes/font_size = 10
 text = "Bicycle Horn Sound- AntumDeluge
 
 https://opengameart.org/content/bicycle-horn"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="Panel2/Label/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Concrete Steps - Pixabay
+
+https://pixabay.com/es/sound-effects/concrete-footsteps-6752/"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="Panel2/Label/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Laughter - Pixabay
+
+https://pixabay.com/es/sound-effects/laughter-29686/"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

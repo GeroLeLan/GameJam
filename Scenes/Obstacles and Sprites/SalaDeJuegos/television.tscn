@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0ng3qkhdm7cr"]
+
+[ext_resource type="Texture2D" uid="uid://b8akqs415i2e6" path="res://Sprites/simple_tileset/TILEMAP_walls.png" id="1_v6ti7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrqno"]
+size = Vector2(46, 24)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_v6ti7")
+region_enabled = true
+region_rect = Rect2(128, 48, 48, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_rrqno")
