@@ -16,6 +16,14 @@
 		"score": 680
 	},
 	{
+		"name": "HOLA",
+		"score": 650
+	},
+	{
+		"name": "",
+		"score": 650
+	},
+	{
 		"name": "Gero",
 		"score": 500
 	},
@@ -26,13 +34,5 @@
 	{
 		"name": "no estoy seguro de que ande bien el tema de los scores, de paso voy a ver si hay algun problem si se pone un texto muy largo en este campo, capaz deberia estar limitada la cantidad de caracteres que se pueden meter aca porque por lo que veo no hay ningun problema en meter todo un testamento, a creo que voy a probar eso ",
 		"score": 400
-	},
-	{
-		"name": "Goe",
-		"score": 370
-	},
-	{
-		"name": "TEST2",
-		"score": 150
 	}
 ]
