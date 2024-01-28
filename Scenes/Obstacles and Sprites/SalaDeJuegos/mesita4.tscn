@@ -3,15 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://b8akqs415i2e6" path="res://Sprites/simple_tileset/TILEMAP_walls.png" id="1_nmgy6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oecip"]
-size = Vector2(12, 18)
+size = Vector2(12, 8)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_nmgy6")
 region_enabled = true
-region_rect = Rect2(224, 48, 16, 32)
+region_rect = Rect2(224, 50, 16, 29)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_oecip")
