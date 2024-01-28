@@ -23,10 +23,9 @@ func _ready():
 
 
 func emit_balloon(count):
-	var values = [Color.AQUA, Color.RED, Color.BLUE_VIOLET, Color.GREEN, Color.YELLOW]
+
 	for i in range(count):
 		var balloon = preload("res://Scenes/balloon.tscn").instantiate()
-		balloon.modulate = values[randi() % values.size()]
 		$Path2D/PathFollow2D.progress_ratio = randf()
 		balloon.global_position = $Path2D/PathFollow2D.global_position
 		get_parent().add_child(balloon)
