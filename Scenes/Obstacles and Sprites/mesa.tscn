@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg77l01orvyk2"]
+
+[ext_resource type="Texture2D" uid="uid://c1aur8t4fm7kt" path="res://Sprites/ExternalSprites/new_sheet.png" id="1_onhjj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3ay6"]
+size = Vector2(24, 35)
+
+[node name="Mesa" type="StaticBody2D"]
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_onhjj")
+region_enabled = true
+region_rect = Rect2(18, 296, 26, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_q3ay6")
