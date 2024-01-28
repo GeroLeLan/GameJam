@@ -64,7 +64,6 @@ func setColor():
 		$AnimatedSprite2D.play("idle square")
 
 func setAnimation():
-	print(color)
 	if color == 0:
 		$AnimatedSprite2D.play("movement")
 	if color == 1: 

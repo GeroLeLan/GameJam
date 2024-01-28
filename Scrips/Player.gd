@@ -27,7 +27,6 @@ func _physics_process(delta):
 	if(direction):
 		velocity = direction * MAX_VELOCITY
 		if(direction.x):
-			print(direction.x)
 			transform.x= Vector2(direction.x*xSize,0)
 			$Camera2D.transform.x= Vector2(direction.x,0)
 	else:
@@ -49,7 +48,6 @@ func _physics_process(delta):
 
 func set_arrow_target(positions_array):
 	if (arrow == null):
-		print("hola")
 		for pos in positions_array:
 			arrow = preload("res://Scenes/arrow_pointer.tscn").instantiate()
 			arrow.origin_position = position
@@ -88,7 +86,6 @@ func getposition():
 
 func addArray(value):
 	array.append(value)
-	#print(array)
 
 func removeFromArray(children):
 	if array.size() > 0:
