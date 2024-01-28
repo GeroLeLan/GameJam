@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://lwdkc0vkml3w"]
+[gd_scene load_steps=14 format=3 uid="uid://lwdkc0vkml3w"]
 
 [ext_resource type="Script" path="res://Scrips/how_to_play.gd" id="1_i7ki0"]
 [ext_resource type="Texture2D" uid="uid://8ax1mqunykpm" path="res://Sprites/Key_Sprites/W-Key.png" id="2_b5fqe"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://j6vivrdd6cjw" path="res://Sprites/pibita .png" id="9_qalmp"]
 [ext_resource type="Texture2D" uid="uid://d11alfoht4hke" path="res://Sprites/pibito 1.png" id="10_othw8"]
 [ext_resource type="Texture2D" uid="uid://b2itewpuahnb1" path="res://Sprites/pibito 3.png" id="11_lxw3b"]
+[ext_resource type="Texture2D" uid="uid://2de0ojcq1q8u" path="res://Sprites/HowToPlay3.png" id="12_l0w0d"]
+[ext_resource type="Texture2D" uid="uid://bpelitbbdio8" path="res://Sprites/Key_Sprites/emote_exclamation.png" id="13_7tpng"]
 
 [node name="HowToPlay" type="Node2D"]
 script = ExtResource("1_i7ki0")
@@ -126,9 +128,9 @@ autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="Panel3"]
 layout_mode = 0
-offset_left = 317.0
+offset_left = 245.0
 offset_top = 176.0
-offset_right = 635.0
+offset_right = 563.0
 offset_bottom = 249.0
 text = "Llevalos a la zona de diversion que marca la flecha para sumar puntos!"
 horizontal_alignment = 2
@@ -147,9 +149,9 @@ autowrap_mode = 2
 
 [node name="Label5" type="Label" parent="Panel3"]
 layout_mode = 0
-offset_left = 237.0
+offset_left = 173.0
 offset_top = 408.0
-offset_right = 637.0
+offset_right = 573.0
 offset_bottom = 500.0
 text = "¡Cuidado! Si no cumplis la secuencia antes de que el medidor se acabe, perderas tiempo!
 
@@ -253,5 +255,17 @@ texture = ExtResource("11_lxw3b")
 [node name="Pibito4" type="Sprite2D" parent="."]
 position = Vector2(1016, 184)
 texture = ExtResource("11_lxw3b")
+
+[node name="HowToPlay3" type="Sprite2D" parent="."]
+position = Vector2(992, 416)
+scale = Vector2(0.886473, 0.82)
+texture = ExtResource("12_l0w0d")
+region_enabled = true
+region_rect = Rect2(5, 3, 197, 46)
+
+[node name="EmoteExclamation" type="Sprite2D" parent="."]
+position = Vector2(992, 376)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_7tpng")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

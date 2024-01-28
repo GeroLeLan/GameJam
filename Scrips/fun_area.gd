@@ -19,8 +19,7 @@ var enable = false
 
 func _ready():
 	initialize_chain()
-	self_modulate = COLOR_DISABLED
-
+	$ColorRect.set_color(COLOR_DISABLED)
 
 
 func emit_balloon(count):
