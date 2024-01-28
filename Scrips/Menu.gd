@@ -30,3 +30,27 @@ func _on_button_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+
+func _on_button_start_mouse_entered():
+	get_tree().get_nodes_in_group("sonidos")[0].get_node("click").play()
+
+
+func _on_button_mouse_entered():
+	get_tree().get_nodes_in_group("sonidos")[0].get_node("click").play()
+
+
+func _on_button_leaderboard_mouse_entered():
+	get_tree().get_nodes_in_group("sonidos")[0].get_node("click").play()
+
+
+func _on_button_settings_mouse_entered():
+	get_tree().get_nodes_in_group("sonidos")[0].get_node("click").play()
+
+
+func _on_button_credits_mouse_entered():
+	get_tree().get_nodes_in_group("sonidos")[0].get_node("click").play()
+
+
+func _on_quit_mouse_entered():
+	get_tree().get_nodes_in_group("sonidos")[0].get_node("click").play()
