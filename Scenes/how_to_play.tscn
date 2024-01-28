@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://lwdkc0vkml3w"]
+[gd_scene load_steps=12 format=3 uid="uid://lwdkc0vkml3w"]
 
 [ext_resource type="Script" path="res://Scrips/how_to_play.gd" id="1_i7ki0"]
 [ext_resource type="Texture2D" uid="uid://8ax1mqunykpm" path="res://Sprites/Key_Sprites/W-Key.png" id="2_b5fqe"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bsck7jynga4w0" path="res://Sprites/Key_Sprites/S-Key.png" id="4_26tcg"]
 [ext_resource type="Texture2D" uid="uid://b84gvqlsot2ey" path="res://Sprites/Key_Sprites/D-Key.png" id="5_5hose"]
 [ext_resource type="Texture2D" uid="uid://13ld8nt5ojjk" path="res://Sprites/Key_Sprites/E-Key.png" id="6_75f83"]
+[ext_resource type="Texture2D" uid="uid://o1u1p5sljlx2" path="res://Sprites/payaso.png" id="7_y325s"]
+[ext_resource type="Texture2D" uid="uid://cuobspml72iwq" path="res://Sprites/Key_Sprites/UIpackSheet_transparent.png" id="8_bnlxd"]
+[ext_resource type="Texture2D" uid="uid://j6vivrdd6cjw" path="res://Sprites/pibita .png" id="9_qalmp"]
+[ext_resource type="Texture2D" uid="uid://d11alfoht4hke" path="res://Sprites/pibito 1.png" id="10_othw8"]
+[ext_resource type="Texture2D" uid="uid://b2itewpuahnb1" path="res://Sprites/pibito 3.png" id="11_lxw3b"]
 
 [node name="HowToPlay" type="Node2D"]
 script = ExtResource("1_i7ki0")
@@ -113,27 +118,27 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="Panel3"]
 layout_mode = 0
 offset_left = 13.0
-offset_top = 72.0
-offset_right = 317.0
-offset_bottom = 168.0
+offset_top = 71.0
+offset_right = 253.0
+offset_bottom = 167.0
 text = "Acercate a los nenes para que te sigan!"
 autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="Panel3"]
 layout_mode = 0
-offset_left = 117.0
-offset_top = 168.0
-offset_right = 579.0
-offset_bottom = 222.0
+offset_left = 317.0
+offset_top = 176.0
+offset_right = 635.0
+offset_bottom = 249.0
 text = "Llevalos a la zona de diversion que marca la flecha para sumar puntos!"
 horizontal_alignment = 2
 autowrap_mode = 2
 
 [node name="Label4" type="Label" parent="Panel3"]
 layout_mode = 0
-offset_left = 5.0
+offset_left = 13.0
 offset_top = 280.0
-offset_right = 467.0
+offset_right = 475.0
 offset_bottom = 391.0
 text = "Cada zona de diversion tiene una secuencia. Cumplila para ganar mas puntos y tiempo extra!
 
@@ -142,9 +147,9 @@ autowrap_mode = 2
 
 [node name="Label5" type="Label" parent="Panel3"]
 layout_mode = 0
-offset_left = 189.0
+offset_left = 237.0
 offset_top = 408.0
-offset_right = 589.0
+offset_right = 637.0
 offset_bottom = 500.0
 text = "¡Cuidado! Si no cumplis la secuencia antes de que el medidor se acabe, perderas tiempo!
 
@@ -185,5 +190,68 @@ Me contrataron como animador para un cumpleaños pero es un quilombo :(
 Ayudame a llevar a los pibes a las zonas de diversion de cada salita antes que se acabe el tiempo!"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Payaso" type="Sprite2D" parent="."]
+position = Vector2(792, 184)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("7_y325s")
+
+[node name="Payaso2" type="Sprite2D" parent="."]
+position = Vector2(1080, 176)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("7_y325s")
+
+[node name="Right Arrow" type="Sprite2D" parent="."]
+position = Vector2(840, 160)
+rotation = 1.57421
+texture = ExtResource("8_bnlxd")
+region_enabled = true
+region_rect = Rect2(305, 467, 18, 18)
+
+[node name="Right Arrow4" type="Sprite2D" parent="."]
+position = Vector2(920, 184)
+scale = Vector2(3.16667, 3.16667)
+texture = ExtResource("8_bnlxd")
+region_enabled = true
+region_rect = Rect2(451, 434, 15, 12)
+
+[node name="Right Arrow2" type="Sprite2D" parent="."]
+position = Vector2(856, 200)
+rotation = 0.716211
+texture = ExtResource("8_bnlxd")
+region_enabled = true
+region_rect = Rect2(305, 467, 18, 18)
+
+[node name="Right Arrow3" type="Sprite2D" parent="."]
+position = Vector2(816, 152)
+rotation = -0.598648
+scale = Vector2(1.06579, 1)
+texture = ExtResource("8_bnlxd")
+region_enabled = true
+region_rect = Rect2(305, 467, 18, 18)
+
+[node name="Pibita" type="Sprite2D" parent="."]
+position = Vector2(840, 136)
+texture = ExtResource("9_qalmp")
+
+[node name="Pibita2" type="Sprite2D" parent="."]
+position = Vector2(1048, 184)
+texture = ExtResource("9_qalmp")
+
+[node name="Pibito1" type="Sprite2D" parent="."]
+position = Vector2(872, 216)
+texture = ExtResource("10_othw8")
+
+[node name="Pibito2" type="Sprite2D" parent="."]
+position = Vector2(984, 184)
+texture = ExtResource("10_othw8")
+
+[node name="Pibito3" type="Sprite2D" parent="."]
+position = Vector2(840, 184)
+texture = ExtResource("11_lxw3b")
+
+[node name="Pibito4" type="Sprite2D" parent="."]
+position = Vector2(1016, 184)
+texture = ExtResource("11_lxw3b")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
