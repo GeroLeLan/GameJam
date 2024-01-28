@@ -39,6 +39,26 @@ text = "LEVEL UP"
 [node name="TiempoLimite" type="Timer" parent="UI_Layer/Panel"]
 wait_time = 90.0
 
+[node name="ComboPanel" type="Panel" parent="UI_Layer"]
+offset_left = 730.0
+offset_right = 1158.0
+offset_bottom = 53.0
+
+[node name="TextRect" type="TextureRect" parent="UI_Layer/ComboPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 51.0
+offset_bottom = 49.0
+expand_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Layer/ComboPanel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 3.0
+offset_right = 417.0
+offset_bottom = 50.0
+
 [node name="testMap" parent="." instance=ExtResource("2_2wdq5")]
 position = Vector2(515, 427)
 script = null
@@ -47,9 +67,11 @@ script = null
 
 [node name="FunArea" parent="FunAreas" instance=ExtResource("4_e2boj")]
 position = Vector2(1444, 371)
+area_name = "comida"
 
 [node name="FunArea2" parent="FunAreas" instance=ExtResource("4_e2boj")]
 position = Vector2(-280, 370)
+area_name = "arcade"
 chain_size = 3
 chain_score = 200
 

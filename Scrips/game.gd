@@ -10,8 +10,6 @@ const SCORE_LEVELUP_INITIAL = 100
 @onready var score_label = $UI_Layer/Panel/HBoxContainer/ScoreLabel
 
 
-
-
 @onready var GlobalDificulty = 1
 @onready var lives = 3
 @onready var levelUp_counter = 1
@@ -23,6 +21,7 @@ const SCORE_LEVELUP_INITIAL = 100
 @onready var fun_area_2 = $FunAreas/FunArea2
 @onready var fun_area_3 = $FunAreas/FunArea3
 
+# ComboPanel
 var funAreaActive
 var dificultad_time = false
 
@@ -41,6 +40,7 @@ func _ready():
 	$Payaso.set_arrow_target([fun_area.global_position, fun_area_2.global_position,fun_area_3.global_position])
 	selecZone()
 	funAreaActive.disableToggle()
+	updateComboPanel()
 	$ZoneRandomizer.start()
 
 func _process(delta):
@@ -53,6 +53,35 @@ func _process(delta):
 		sec = str(sec)
 	lives_label.text = "Time: "+str(minutos) + ":" + sec
 
+func updateComboPanel():
+	var comboIcon = $UI_Layer/ComboPanel/TextRect
+	var comboBox = $UI_Layer/ComboPanel/HBoxContainer
+	
+	for node in comboBox.get_children():
+		node.queue_free()
+	
+	var activeAreaType = funAreaActive.area_name
+	if activeAreaType == "futbol":
+		comboIcon.texture = preload("res://Sprites/fuchibol.png")
+	elif activeAreaType == "arcade":
+		comboIcon.texture = preload("res://Sprites/jueguitos.png")
+	else:
+		comboIcon.texture = preload("res://Sprites/comida.png")
+	
+	
+	var activeChain = funAreaActive.target_chain
+	for elem in activeChain:
+		var textRect = TextureRect.new()
+		if elem == 0:
+			textRect.texture = preload("res://Sprites/pibita .png")
+		elif elem == 1:
+			textRect.texture = preload("res://Sprites/pibito 1.png")
+		else:
+			textRect.texture = preload("res://Sprites/pibito 3.png")
+		#textRect.expand_mode = TextureRect.EXPAND_FIT_HEIGHT
+		textRect.expand_mode = 3
+		comboBox.add_child(textRect)
+	
 
 func add_score(s):
 	global.score += int(s)
@@ -63,13 +92,6 @@ func add_score(s):
 		update_difficulty()
 	
 
-func lose_life():
-	lives -= 1
-	lives_label.text = "LIVES: "+str(lives)
-	
-	if lives <= 0:
-		# Pausar todos los timers
-		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 
 
@@ -108,6 +130,7 @@ func modifyTime(value):
 func SelectNewArea():
 	funAreaActive.disableToggle()
 	selecZone()
+	updateComboPanel()
 	funAreaActive.disableToggle()
 	$ZoneRandomizer.stop()
 	$ZoneRandomizer.start()

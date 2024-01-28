@@ -1,5 +1,5 @@
 extends Node2D
-
+@export var area_name = "futbol"
 @export var chain_size = 2
 @export var base_score = 10
 @export var chain_score = 100			# Definir luego por cada zona
