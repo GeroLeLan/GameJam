@@ -20,6 +20,10 @@ config/icon="res://Sprites/icon.svg"
 global="*res://Scrips/global.gd"
 MusicController="*res://autoload/MusicController.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [gui]
 
 theme/custom_font="res://Font/PublicPixel.ttf"
