@@ -37,6 +37,10 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("Star_movement")
 		if($AnimatedSprite2D.animation=="Star_movement") and ($AnimatedSprite2D.animation!="movement" and $AnimatedSprite2D.frame_progress == 1.0):
 			$AnimatedSprite2D.play("movement")
+			
+		if $Timer.time_left <= 0:
+			$AudioStreamPlayer.play()
+			$Timer.start(0.25)
 	else:
 		if($AnimatedSprite2D.animation!="End_movement") and ($AnimatedSprite2D.animation!="default"):
 			$AnimatedSprite2D.play("End_movement")
