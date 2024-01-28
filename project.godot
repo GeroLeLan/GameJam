@@ -19,6 +19,10 @@ config/icon="res://Sprites/icon.svg"
 
 global="*res://Scrips/global.gd"
 
+[gui]
+
+theme/custom_font="res://Font/PublicPixel.ttf"
+
 [input]
 
 Move_Up={
