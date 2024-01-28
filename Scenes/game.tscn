@@ -80,13 +80,13 @@ position = Vector2(590, 452)
 area_name = "comida"
 
 [node name="FunArea2" parent="FunAreas" instance=ExtResource("4_e2boj")]
-position = Vector2(296, -990)
+position = Vector2(-64, -960)
 area_name = "arcade"
 chain_size = 3
 chain_score = 200
 
 [node name="FunArea3" parent="FunAreas" instance=ExtResource("4_e2boj")]
-position = Vector2(1597, -1010)
+position = Vector2(1175, -354)
 chain_size = 4
 chain_score = 500
 
@@ -98,16 +98,17 @@ position = Vector2(574, 319)
 position = Vector2(1066, 154)
 
 [node name="SpawnArea" parent="SpawnAreas" instance=ExtResource("5_rwpsg")]
-position = Vector2(-1301, -949)
+position = Vector2(-1067, -611)
 
 [node name="SpawnArea2" parent="SpawnAreas" instance=ExtResource("5_rwpsg")]
-position = Vector2(71, -940)
+position = Vector2(118, -802)
+scale = Vector2(0.7, 0.7)
 
 [node name="SpawnArea3" parent="SpawnAreas" instance=ExtResource("5_rwpsg")]
 position = Vector2(148, 212)
 
 [node name="SpawnArea4" parent="SpawnAreas" instance=ExtResource("5_rwpsg")]
-position = Vector2(-1118, 217)
+position = Vector2(-1094, 220)
 
 [node name="ZoneRandomizer" type="Timer" parent="."]
 wait_time = 40.0
@@ -119,7 +120,7 @@ autoplay = true
 
 [node name="Level" parent="." instance=ExtResource("6_o4jbc")]
 z_index = -1
-position = Vector2(593, -718)
+position = Vector2(590, -703)
 scale = Vector2(1.7, 1.7)
 
 [connection signal="timeout" from="UI_Layer/Panel/LevelUpTimer" to="." method="_on_level_up_timer_timeout"]
