@@ -46,18 +46,17 @@ func _physics_process(delta):
 	move_and_slide() 
 
 
-func set_arrow_target(positions_array):
+func set_arrow_target(target):
 	if (arrow == null):
-		for pos in positions_array:
-			arrow = preload("res://Scenes/arrow_pointer.tscn").instantiate()
-			arrow.origin_position = position
-			arrow.target_position = pos
-			add_child(arrow)
+		arrow = preload("res://Scenes/arrow_pointer.tscn").instantiate()
+		arrow.origin_position = position
+		arrow.game_ref = get_parent()
+		arrow.target_position = target.global_position
+		add_child(arrow)
 	else:
-		for pos in positions_array:
-			arrow.target_position = pos
+		arrow.origin_position = position
+		arrow.target_position = target.global_position
 		
-	
 	
 
 

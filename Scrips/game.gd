@@ -8,6 +8,7 @@ const SCORE_LEVELUP_INITIAL = 100
 
 @onready var lives_label = $UI_Layer/Panel/HBoxContainer/LivesLabel
 @onready var score_label = $UI_Layer/Panel/HBoxContainer/ScoreLabel
+@onready var zone_randomizer = $ZoneRandomizer
 
 
 @onready var GlobalDificulty = 1
@@ -81,6 +82,7 @@ func updateComboPanel():
 		textRect.expand_mode = 3
 		comboBox.add_child(textRect)
 	
+		$Payaso.set_arrow_target(funAreaActive)
 
 func add_score(s):
 	global.score += int(s)
@@ -134,6 +136,7 @@ func SelectNewArea():
 	$ZoneRandomizer.stop()
 	$ZoneRandomizer.start()
 
+
 func selecZone():
 	var rng = RandomNumberGenerator.new()
 	var my_random_number = int(rng.randf_range(1,3))
@@ -149,7 +152,7 @@ func selecZone():
 		funAreaActive = fun_area_2
 	elif(my_random_number == 3):
 		funAreaActive = fun_area_3
-	$Payaso.set_arrow_target([funAreaActive.global_position])
+
 
 
 func _on_zone_randomizer_timeout():

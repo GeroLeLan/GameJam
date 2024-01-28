@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://lwdkc0vkml3w"]
+[gd_scene load_steps=3 format=3 uid="uid://lwdkc0vkml3w"]
 
 [ext_resource type="Script" path="res://Scrips/how_to_play.gd" id="1_i7ki0"]
+[ext_resource type="FontFile" uid="uid://dv1n7ouq17eh" path="res://Font/RETRO_SPACE/RETRO_SPACE.ttf" id="2_0gufl"]
 
 [node name="HowToPlay" type="Node2D"]
 script = ExtResource("1_i7ki0")
@@ -110,6 +111,7 @@ offset_left = 69.0
 offset_top = 20.0
 offset_right = 348.0
 offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("2_0gufl")
 theme_override_font_sizes/font_size = 32
 text = "Objetivo del juego"
 horizontal_alignment = 1
@@ -120,6 +122,7 @@ offset_left = 24.0
 offset_top = 81.0
 offset_right = 399.0
 offset_bottom = 364.0
+theme_override_fonts/font = ExtResource("2_0gufl")
 text = "Te contrataron para animar un cumpleañitos y acabas de descubrir que la situación es caótica: Hay nenes gritando por todos lados, tiraron un arcade y ¿¡eso es fuego!? Tenes que actuar y rapido!
 
 Para calmar a estos pibitos, llevalos a lugares donde puedan entretenerse. Pero tene cuidado! Si los dejas sin entretener por mucho tiempo, entonces se iran y el jefe te dará una advertencia, 3 de ellas y serás despedido!
