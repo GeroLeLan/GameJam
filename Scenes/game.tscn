@@ -41,6 +41,7 @@ wait_time = 90.0
 
 [node name="testMap" parent="." instance=ExtResource("2_2wdq5")]
 position = Vector2(515, 427)
+script = null
 
 [node name="FunAreas" type="Node2D" parent="."]
 

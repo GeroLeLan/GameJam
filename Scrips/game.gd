@@ -3,24 +3,31 @@ extends Node2D
 const MAX_DIFICULTY = 3.1
 const DIFICULTY_INCRESER = 0.2
 const SPAWN_TIMER_MAX = 5.0
+const SCORE_LEVELUP_INITIAL = 100
+
 
 @onready var lives_label = $UI_Layer/Panel/HBoxContainer/LivesLabel
 @onready var score_label = $UI_Layer/Panel/HBoxContainer/ScoreLabel
 
-@onready var spawn_timer = $SpawnTimer
-@onready var kid_spawnner = $KidSpawnner
-@onready var dificultTimer = $DifficultTimer
+
+
+
 @onready var GlobalDificulty = 1
 @onready var lives = 3
-
+@onready var levelUp_counter = 1
 
 @onready var kids_counter = 0 
-const KIDS_LEVELUP_CAP = 5
+@onready var score_counter = 0
+
 @onready var fun_area = $FunAreas/FunArea
 @onready var fun_area_2 = $FunAreas/FunArea2
 @onready var fun_area_3 = $FunAreas/FunArea3
+
 var funAreaActive
 var dificultad_time = false
+
+
+
 
 
 func _ready():
@@ -50,10 +57,10 @@ func _process(delta):
 func add_score(s):
 	global.score += int(s)
 	score_label.text = "SCORE: "+str(global.score)
-	if dificultad_time == false:
-		if kids_counter >= KIDS_LEVELUP_CAP:
-			kids_counter = kids_counter % KIDS_LEVELUP_CAP
-			update_difficulty()
+	
+	
+	if global.score >= SCORE_LEVELUP_INITIAL*levelUp_counter:
+		update_difficulty()
 	
 
 func lose_life():
@@ -73,6 +80,7 @@ func _physics_process(delta):
 
 func update_difficulty():
 	if(GlobalDificulty+DIFICULTY_INCRESER)<= MAX_DIFICULTY:
+		levelUp_counter+=1
 		GlobalDificulty+=DIFICULTY_INCRESER
 		get_tree().call_group("children","setDifficulty",GlobalDificulty)
 		$UI_Layer/Panel/HBoxContainer/LevelUpLabel.visible = true
