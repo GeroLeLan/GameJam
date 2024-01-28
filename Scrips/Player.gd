@@ -52,10 +52,12 @@ func set_arrow_target(target):
 		arrow.origin_position = position
 		arrow.game_ref = get_parent()
 		arrow.target_position = target.global_position
+		arrow.modulate = arrow.color_array[0]
 		add_child(arrow)
 	else:
 		arrow.origin_position = position
 		arrow.target_position = target.global_position
+		arrow.modulate = arrow.color_array[0]
 		
 	
 
