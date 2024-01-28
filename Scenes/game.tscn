@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://svcat5twp0tj"]
 
 [ext_resource type="Script" path="res://Scrips/game.gd" id="1_pmwlm"]
-[ext_resource type="PackedScene" uid="uid://3o250xsddlkc" path="res://Scenes/test_map.tscn" id="2_2wdq5"]
 [ext_resource type="PackedScene" uid="uid://4hg7xf2kanx7" path="res://Scenes/Player.tscn" id="3_0vxsx"]
 [ext_resource type="PackedScene" uid="uid://ddu8fugi0j1pj" path="res://Scenes/fun_area.tscn" id="4_e2boj"]
 [ext_resource type="PackedScene" uid="uid://cr1wqjnqrxa1b" path="res://Scenes/spawn_area.tscn" id="5_rwpsg"]
+[ext_resource type="PackedScene" uid="uid://cabk6sy0ci0sg" path="res://Scenes/level.tscn" id="6_o4jbc"]
 [ext_resource type="AudioStream" uid="uid://b3mx58bfipuxo" path="res://audio/juego/temaPrincipal.ogg" id="6_oksa4"]
 
 [node name="Game" type="Node2D"]
@@ -73,24 +73,20 @@ offset_bottom = 80.0
 wait_time = 0.5
 autostart = true
 
-[node name="testMap" parent="." instance=ExtResource("2_2wdq5")]
-position = Vector2(515, 427)
-script = null
-
 [node name="FunAreas" type="Node2D" parent="."]
 
 [node name="FunArea" parent="FunAreas" instance=ExtResource("4_e2boj")]
-position = Vector2(1444, 371)
+position = Vector2(590, 452)
 area_name = "comida"
 
 [node name="FunArea2" parent="FunAreas" instance=ExtResource("4_e2boj")]
-position = Vector2(-280, 370)
+position = Vector2(296, -990)
 area_name = "arcade"
 chain_size = 3
 chain_score = 200
 
 [node name="FunArea3" parent="FunAreas" instance=ExtResource("4_e2boj")]
-position = Vector2(596, 32)
+position = Vector2(1597, -1010)
 chain_size = 4
 chain_score = 500
 
@@ -102,16 +98,16 @@ position = Vector2(574, 319)
 position = Vector2(1066, 154)
 
 [node name="SpawnArea" parent="SpawnAreas" instance=ExtResource("5_rwpsg")]
-position = Vector2(-1192, -661)
+position = Vector2(-1301, -949)
 
 [node name="SpawnArea2" parent="SpawnAreas" instance=ExtResource("5_rwpsg")]
-position = Vector2(240, -651)
+position = Vector2(71, -940)
 
 [node name="SpawnArea3" parent="SpawnAreas" instance=ExtResource("5_rwpsg")]
-position = Vector2(-463, -665)
+position = Vector2(148, 212)
 
 [node name="SpawnArea4" parent="SpawnAreas" instance=ExtResource("5_rwpsg")]
-position = Vector2(-507, 233)
+position = Vector2(-1118, 217)
 
 [node name="ZoneRandomizer" type="Timer" parent="."]
 wait_time = 40.0
@@ -120,6 +116,11 @@ wait_time = 40.0
 stream = ExtResource("6_oksa4")
 volume_db = -22.75
 autoplay = true
+
+[node name="Level" parent="." instance=ExtResource("6_o4jbc")]
+z_index = -1
+position = Vector2(593, -718)
+scale = Vector2(1.7, 1.7)
 
 [connection signal="timeout" from="UI_Layer/Panel/LevelUpTimer" to="." method="_on_level_up_timer_timeout"]
 [connection signal="timeout" from="UI_Layer/Panel/TiempoLimite" to="." method="_on_tiempo_limite_timeout"]

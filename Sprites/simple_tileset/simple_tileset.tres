@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://hy5fdq83hlqi"]
 
-[ext_resource type="Texture2D" uid="uid://oybpjxlnsh62" path="res://assets/simple_tileset/spritesheet.png" id="1_vvxwr"]
+[ext_resource type="Texture2D" uid="uid://oybpjxlnsh62" path="res://Sprites/simple_tileset/spritesheet.png" id="1_vvxwr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6hdv"]
 resource_name = "Simple"
