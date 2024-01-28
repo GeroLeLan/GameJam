@@ -59,6 +59,17 @@ offset_top = 3.0
 offset_right = 417.0
 offset_bottom = 50.0
 
+[node name="ProgressBar" type="ProgressBar" parent="UI_Layer/ComboPanel"]
+layout_mode = 0
+offset_top = 53.0
+offset_right = 429.0
+offset_bottom = 80.0
+show_percentage = false
+
+[node name="ProgressBarTimer" type="Timer" parent="UI_Layer/ComboPanel/ProgressBar"]
+wait_time = 0.5
+autostart = true
+
 [node name="testMap" parent="." instance=ExtResource("2_2wdq5")]
 position = Vector2(515, 427)
 script = null
@@ -104,4 +115,5 @@ wait_time = 40.0
 
 [connection signal="timeout" from="UI_Layer/Panel/LevelUpTimer" to="." method="_on_level_up_timer_timeout"]
 [connection signal="timeout" from="UI_Layer/Panel/TiempoLimite" to="." method="_on_tiempo_limite_timeout"]
+[connection signal="timeout" from="UI_Layer/ComboPanel/ProgressBar/ProgressBarTimer" to="." method="_on_progress_bar_timer_timeout"]
 [connection signal="timeout" from="ZoneRandomizer" to="." method="_on_zone_randomizer_timeout"]

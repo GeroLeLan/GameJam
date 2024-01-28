@@ -22,6 +22,9 @@ const SCORE_LEVELUP_INITIAL = 100
 @onready var fun_area_2 = $FunAreas/FunArea2
 @onready var fun_area_3 = $FunAreas/FunArea3
 
+@onready var progressBar = $UI_Layer/ComboPanel/ProgressBar 
+@onready var progress_bar_timer = $UI_Layer/ComboPanel/ProgressBar/ProgressBarTimer
+
 # ComboPanel
 var funAreaActive
 var dificultad_time = false
@@ -135,6 +138,7 @@ func SelectNewArea():
 	funAreaActive.disableToggle()
 	$ZoneRandomizer.stop()
 	$ZoneRandomizer.start()
+	$UI_Layer/ComboPanel/ProgressBar.value=0
 
 
 func selecZone():
@@ -157,4 +161,9 @@ func selecZone():
 
 func _on_zone_randomizer_timeout():
 	SelectNewArea()
+	
+
+
+func _on_progress_bar_timer_timeout():
+	progressBar.value=$ZoneRandomizer.time_left/$ZoneRandomizer.wait_time*100
 	
