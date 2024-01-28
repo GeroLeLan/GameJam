@@ -102,11 +102,12 @@ func _on_area_2d_body_entered(body):
 	var chain_array
 	if body.has_method("get_chain") and enable:
 		chain_array = body.get_chain()		
-		var score = calculate_score(body,chain_array)
-		game_ref.add_score(score)
-		initialize_chain()
-		game_ref.updateComboPanel()
-		$AudioStreamPlayer.play()
+		if(!chain_array.is_empty ( )):
+			var score = calculate_score(body,chain_array)
+			game_ref.add_score(score)
+			initialize_chain()
+			game_ref.updateComboPanel()
+			$AudioStreamPlayer.play()
 
 func disableToggle():
 	enable = !enable
