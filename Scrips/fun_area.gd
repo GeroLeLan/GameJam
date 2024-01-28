@@ -86,6 +86,7 @@ func calculate_score(player,chain):
 	if chain_count > 0:
 		emit_balloon(chain_count*3)
 		game_ref.modifyTime((chain_size-1)*10*chain_count)
+		game_ref.SelectNewArea()
 	
 	if result > 0:
 		confetti_shooter.emitting = true
@@ -104,7 +105,7 @@ func _on_area_2d_body_entered(body):
 		var score = calculate_score(body,chain_array)
 		game_ref.add_score(score)
 		initialize_chain()
-		game_ref.SelectNewArea()
+		
 
 func disableToggle():
 	enable = !enable
