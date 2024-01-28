@@ -76,5 +76,9 @@ position = Vector2(-463, -665)
 [node name="SpawnArea4" parent="SpawnAreas" instance=ExtResource("5_rwpsg")]
 position = Vector2(-507, 233)
 
+[node name="ZoneRandomizer" type="Timer" parent="."]
+wait_time = 40.0
+
 [connection signal="timeout" from="UI_Layer/Panel/LevelUpTimer" to="." method="_on_level_up_timer_timeout"]
 [connection signal="timeout" from="UI_Layer/Panel/TiempoLimite" to="." method="_on_tiempo_limite_timeout"]
+[connection signal="timeout" from="ZoneRandomizer" to="." method="_on_zone_randomizer_timeout"]

@@ -10,6 +10,8 @@ var target_chain
 @onready var h_box_container = $Panel/HBoxContainer
 @onready var confetti_shooter = $ConfettiShooter
 
+var enable = false
+
 func _ready():
 	initialize_chain()
 
@@ -97,8 +99,17 @@ func calculate_score(player,chain):
 
 func _on_area_2d_body_entered(body):
 	var chain_array
-	if body.has_method("get_chain"):
+	if body.has_method("get_chain") and enable:
 		chain_array = body.get_chain()		
 		var score = calculate_score(body,chain_array)
 		game_ref.add_score(score)
 		initialize_chain()
+		game_ref.SelectNewArea()
+
+func disableToggle():
+	enable = !enable
+	if(enable):
+		$ColorRect.set_color(Color.WHITE)
+	else:
+		$ColorRect.set_color(Color.BLACK)
+

@@ -14,13 +14,12 @@ const SPAWN_TIMER_MAX = 5.0
 @onready var lives = 3
 
 
-
 @onready var kids_counter = 0 
 const KIDS_LEVELUP_CAP = 5
 @onready var fun_area = $FunAreas/FunArea
 @onready var fun_area_2 = $FunAreas/FunArea2
 @onready var fun_area_3 = $FunAreas/FunArea3
-
+var funAreaActive
 var dificultad_time = false
 
 
@@ -31,9 +30,11 @@ func _ready():
 	#lives_label.text = "LIVES: "+str(lives)
 	lives_label.text = "Time: "+str(time)
 	score_label.text = "SCORE: "+str(global.score)
-
 	# TODO - Agregar 3 pibes en cada zona al inicio
 	$Payaso.set_arrow_target([fun_area.global_position, fun_area_2.global_position,fun_area_3.global_position])
+	selecZone()
+	funAreaActive.disableToggle()
+	$ZoneRandomizer.start()
 
 func _process(delta):
 	var time = int($UI_Layer/Panel/TiempoLimite.time_left)
@@ -95,3 +96,32 @@ func modifyTime(value):
 		timer.stop()
 		timer.set_wait_time(time)
 		timer.start()
+
+func SelectNewArea():
+	funAreaActive.disableToggle()
+	selecZone()
+	funAreaActive.disableToggle()
+	$ZoneRandomizer.stop()
+	$ZoneRandomizer.start()
+
+func selecZone():
+	var rng = RandomNumberGenerator.new()
+	var my_random_number = int(rng.randf_range(1,3))
+	if(my_random_number == 1 and funAreaActive == fun_area):
+		funAreaActive = fun_area_2
+	elif(my_random_number == 2 and funAreaActive == fun_area_2):
+		funAreaActive = fun_area_3
+	elif(my_random_number == 3 and funAreaActive == fun_area_3):
+		funAreaActive = fun_area
+	elif(my_random_number == 1):
+		funAreaActive = fun_area
+	elif(my_random_number == 2):
+		funAreaActive = fun_area_2
+	elif(my_random_number == 3):
+		funAreaActive = fun_area_3
+
+
+func _on_zone_randomizer_timeout():
+	print("HOLA")
+	SelectNewArea()
+	

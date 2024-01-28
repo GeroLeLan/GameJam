@@ -31,6 +31,7 @@ offset_left = -73.0
 offset_top = -64.0
 offset_right = 72.0
 offset_bottom = 65.0
+color = Color(0, 0, 0, 1)
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = -73.0
