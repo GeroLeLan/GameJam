@@ -10,10 +10,11 @@ var offsetX = -30
 var offsetY = -30
 var lastMovement = Vector2.ZERO
 var xSize
+var arrow 
 
 func _ready():
 	xSize = transform.x.x
-
+	arrow = null
 func _physics_process(delta):
 	var direction = Vector2.ZERO
 	direction.x= Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left") 
@@ -47,11 +48,17 @@ func _physics_process(delta):
 
 
 func set_arrow_target(positions_array):
-	for pos in positions_array:
-		var new_arrow = preload("res://Scenes/arrow_pointer.tscn").instantiate()
-		new_arrow.origin_position = position
-		new_arrow.target_position = pos
-		add_child(new_arrow)
+	if (arrow == null):
+		print("hola")
+		for pos in positions_array:
+			arrow = preload("res://Scenes/arrow_pointer.tscn").instantiate()
+			arrow.origin_position = position
+			arrow.target_position = pos
+			add_child(arrow)
+	else:
+		for pos in positions_array:
+			arrow.target_position = pos
+		
 	
 	
 

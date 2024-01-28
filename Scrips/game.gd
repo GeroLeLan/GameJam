@@ -37,7 +37,6 @@ func _ready():
 	lives_label.text = "Time: "+str(time)
 	score_label.text = "SCORE: "+str(global.score)
 	# TODO - Agregar 3 pibes en cada zona al inicio
-	$Payaso.set_arrow_target([fun_area.global_position, fun_area_2.global_position,fun_area_3.global_position])
 	selecZone()
 	funAreaActive.disableToggle()
 	updateComboPanel()
@@ -150,6 +149,7 @@ func selecZone():
 		funAreaActive = fun_area_2
 	elif(my_random_number == 3):
 		funAreaActive = fun_area_3
+	$Payaso.set_arrow_target([funAreaActive.global_position])
 
 
 func _on_zone_randomizer_timeout():
