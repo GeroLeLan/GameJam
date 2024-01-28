@@ -42,4 +42,5 @@ func openleaderboard():
 
 
 func _on_button_2_pressed():
+	global.score = 0
 	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
