@@ -1,6 +1,6 @@
 extends Node2D
 
-const MAX_DIFICULTY = 3.1
+const MAX_DIFICULTY = 5.0
 const DIFICULTY_INCRESER = 0.2
 const SPAWN_TIMER_MAX = 5.0
 @export var SCORE_LEVELUP_INITIAL = 100

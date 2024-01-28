@@ -14,7 +14,7 @@ offset_left = 432.0
 offset_top = 152.0
 offset_right = 716.0
 offset_bottom = 273.0
-min_value = -80.0
+min_value = -40.0
 max_value = 0.0
 
 [node name="Label" type="Label" parent="."]
