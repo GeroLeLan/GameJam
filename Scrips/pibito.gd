@@ -69,5 +69,5 @@ func setAnimation():
 		$AnimatedSprite2D.play("movement")
 	if color == 1: 
 		$AnimatedSprite2D.play("movement naranja")
-	#if color == 2:
-		#$AnimatedSprite2D.play("movement square")
+	if color == 2:
+		$AnimatedSprite2D.play("movement square")
