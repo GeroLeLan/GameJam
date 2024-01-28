@@ -25,10 +25,9 @@ func _on_submit_pressed():
 func openleaderboard():
 	leaderboard_manager = preload("res://Scrips/leaderboard_manager.gd").new()
 	var leaderboard_data = leaderboard_manager.load_leaderboard_data()
-	var vbox = $CanvasLayer/Panel/VBoxContainer
-	
+	var vboxName = $CanvasLayer/Panel/VBoxContainer
+	var vboxScore = $CanvasLayer/Panel/VBoxContainer3
 	for entry in leaderboard_data:
-		var hbox : HBoxContainer = HBoxContainer.new()
 		
 		var label_name : Label = Label.new()
 		label_name.text = entry["name"]
@@ -36,9 +35,9 @@ func openleaderboard():
 		label_score.text = str(entry["score"])
 		label_name.set_custom_minimum_size(Vector2(100, label_score.get_minimum_size().y))
 		label_score.set_custom_minimum_size(Vector2(50, label_score.get_minimum_size().y))
-		hbox.add_child(label_name)
-		hbox.add_child(label_score)
-		vbox.add_child(hbox)
+		
+		vboxName.add_child(label_name)
+		vboxScore.add_child(label_score)
 
 
 func _on_button_2_pressed():

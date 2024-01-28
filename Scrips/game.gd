@@ -3,7 +3,7 @@ extends Node2D
 const MAX_DIFICULTY = 3.1
 const DIFICULTY_INCRESER = 0.2
 const SPAWN_TIMER_MAX = 5.0
-const SCORE_LEVELUP_INITIAL = 100
+@export var SCORE_LEVELUP_INITIAL = 100
 
 
 @onready var lives_label = $UI_Layer/Panel/HBoxContainer/LivesLabel

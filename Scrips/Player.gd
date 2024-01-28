@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const MAX_VELOCITY = 300
+@export var MAX_VELOCITY = 300
 
 func get_chain():
 	return array
