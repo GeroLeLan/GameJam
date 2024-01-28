@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnanhxy5fptrl"]
+[gd_scene load_steps=3 format=3 uid="uid://dnanhxy5fptrl"]
 
 [ext_resource type="Script" path="res://Scrips/GameOver.gd" id="1_ygh5t"]
+[ext_resource type="AudioStream" uid="uid://be0cg7c8x3o62" path="res://audio/gameover/gameover.ogg" id="2_ko8x2"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_ygh5t")
@@ -109,6 +110,11 @@ offset_left = 803.0
 offset_top = 57.0
 offset_right = 1085.0
 offset_bottom = 586.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ko8x2")
+volume_db = 7.495
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Panel/Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer2/Button" to="." method="_on_button_pressed"]
