@@ -92,7 +92,7 @@ chain_score = 200
 [node name="FunArea3" parent="FunAreas" instance=ExtResource("4_e2boj")]
 position = Vector2(596, 32)
 chain_size = 4
-chain_score = 1000
+chain_score = 500
 
 [node name="Payaso" parent="." instance=ExtResource("3_0vxsx")]
 z_index = 1
