@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://lwdkc0vkml3w"]
+[gd_scene load_steps=7 format=3 uid="uid://lwdkc0vkml3w"]
 
 [ext_resource type="Script" path="res://Scrips/how_to_play.gd" id="1_i7ki0"]
+[ext_resource type="Texture2D" uid="uid://8ax1mqunykpm" path="res://Sprites/Key_Sprites/W-Key.png" id="2_b5fqe"]
+[ext_resource type="Texture2D" uid="uid://c70jafkdnw2uj" path="res://Sprites/Key_Sprites/A-Key.png" id="3_78snc"]
+[ext_resource type="Texture2D" uid="uid://bsck7jynga4w0" path="res://Sprites/Key_Sprites/S-Key.png" id="4_26tcg"]
+[ext_resource type="Texture2D" uid="uid://b84gvqlsot2ey" path="res://Sprites/Key_Sprites/D-Key.png" id="5_5hose"]
+[ext_resource type="Texture2D" uid="uid://13ld8nt5ojjk" path="res://Sprites/Key_Sprites/E-Key.png" id="6_75f83"]
 
 [node name="HowToPlay" type="Node2D"]
 script = ExtResource("1_i7ki0")
@@ -42,6 +47,51 @@ offset_bottom = 51.0
 theme_override_font_sizes/font_size = 20
 text = "Controles"
 horizontal_alignment = 1
+
+[node name="SpriteD2" type="Sprite2D" parent="Panel2/Label"]
+position = Vector2(-50.5, 55)
+texture = ExtResource("2_b5fqe")
+region_enabled = true
+region_rect = Rect2(0, 5.0286, 31.9695, 26.9714)
+
+[node name="SpriteA" type="Sprite2D" parent="Panel2/Label"]
+position = Vector2(-82.5, 79)
+texture = ExtResource("3_78snc")
+region_enabled = true
+region_rect = Rect2(0, 5.0286, 31.9695, 26.9714)
+
+[node name="SpriteS" type="Sprite2D" parent="Panel2/Label"]
+position = Vector2(-50.5, 79)
+texture = ExtResource("4_26tcg")
+region_enabled = true
+region_rect = Rect2(0, 5.0286, 31.9695, 26.9714)
+
+[node name="SpriteD" type="Sprite2D" parent="Panel2/Label"]
+position = Vector2(-18.5, 79)
+texture = ExtResource("5_5hose")
+region_enabled = true
+region_rect = Rect2(0, 5.0286, 31.9695, 26.9714)
+
+[node name="Label" type="Label" parent="Panel2/Label"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 58.0
+offset_right = 286.0
+offset_bottom = 74.0
+text = "Para mover a Yayo"
+
+[node name="Label" type="Label" parent="Panel2/Label/Label"]
+offset_top = 56.0
+offset_right = 272.0
+offset_bottom = 91.0
+text = "Para apretar tu nariz"
+autowrap_mode = 2
+
+[node name="SpriteD3" type="Sprite2D" parent="Panel2/Label"]
+position = Vector2(-50, 130)
+texture = ExtResource("6_75f83")
+region_enabled = true
+region_rect = Rect2(0, 5.0286, 31.9695, 26.9714)
 
 [node name="Panel3" type="Panel" parent="."]
 offset_left = 507.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i4k4wgpe5jq4"
-path="res://.godot/imported/slime_body.png-6077169b294728be726d5df3fa68b85b.ctex"
+uid="uid://b84gvqlsot2ey"
+path="res://.godot/imported/D-Key.png-e7ffb560f45bfa04459d9c682ee03f4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/slime_body.png"
-dest_files=["res://.godot/imported/slime_body.png-6077169b294728be726d5df3fa68b85b.ctex"]
+source_file="res://Sprites/Key_Sprites/D-Key.png"
+dest_files=["res://.godot/imported/D-Key.png-e7ffb560f45bfa04459d9c682ee03f4b.ctex"]
 
 [params]
 
