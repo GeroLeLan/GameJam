@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bquv7akdqyvt5"]
+[gd_scene load_steps=6 format=3 uid="uid://bquv7akdqyvt5"]
 
 [ext_resource type="Script" path="res://Scrips/Menu.gd" id="1_ye3qd"]
 [ext_resource type="AudioStream" uid="uid://5a3omd6slart" path="res://audio/menu/menu3.ogg" id="2_hqwda"]
 [ext_resource type="AudioStream" uid="uid://biyi288gvf76p" path="res://audio/pasos/pasos1.ogg" id="3_aevi7"]
+[ext_resource type="AudioStream" uid="uid://fhx05tpmcbfm" path="res://audio/menu/click2.ogg" id="4_b2wco"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx8lf"]
 content_margin_left = 2.0
@@ -89,6 +90,9 @@ autoplay = true
 [node name="click" type="AudioStreamPlayer2D" parent="Node"]
 stream = ExtResource("3_aevi7")
 
+[node name="click_pressed" type="AudioStreamPlayer2D" parent="Node"]
+stream = ExtResource("4_b2wco")
+
 [connection signal="mouse_entered" from="Panel/VBoxContainer/Button_Start" to="." method="_on_button_start_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button_Start" to="." method="_on_button_start_pressed"]
 [connection signal="mouse_entered" from="Panel/VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
@@ -101,3 +105,4 @@ stream = ExtResource("3_aevi7")
 [connection signal="pressed" from="Panel/VBoxContainer/Button_Credits" to="." method="_on_button_credits_pressed"]
 [connection signal="mouse_entered" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="finished" from="Node/click_pressed" to="." method="_on_click_pressed_finished"]
